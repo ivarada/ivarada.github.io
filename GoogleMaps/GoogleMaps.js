@@ -8,19 +8,40 @@
 const labels = ["VA", "OH", "NC", "IL"];
 let labelIndex = 0;
 
-function initMap() {
-    // USA map constant
-    const usa = {
-        lat: 38.5,
-        lng: -82.5
-    };
+async function initMap() {
+    // Request needed libraries.
+    const {
+        Map
+    } = await google.maps.importLibrary("maps");
+    const {
+        AdvancedMarkerElement
+    } = await google.maps.importLibrary("marker");
+    const {
+        LatLng
+    } = await google.maps.importLibrary("core");
+    const USA = new LatLng(38.5, -82.5);
     // create the map
-    const map = new google.maps.Map(document.getElementById("map"), {
+    const map = new Map(document.getElementById("map"), {
         zoom: 7,
-        center: usa,
-        heading: 100,
-        tilt: 0,
+        center: USA,
+        mapId: "4504f8b37365c3d0",
     });
+
+    for (const property of properties) {
+        const AdvancedMarkerElement = new google.maps.marker.AdvancedMarkerElement({
+            map,
+            content: buildContent(property),
+            position: property.position,
+            title: property.description,
+        });
+
+        AdvancedMarkerElement.addListener("click", () => {
+            toggleHighlight(AdvancedMarkerElement, property);
+        });
+    }
+
+
+
     //Ashburn lat long
     const ASVA = {
         lat: 39.03,
@@ -60,7 +81,7 @@ function initMap() {
     //addMarker(NOCT, map, "Norwich");
     addMarker(KMNC, map, "KingsMountain_NC");
     addMarker(DGIL, map, "DownersGrove_IL");
-    
+
 }
 // Adds a marker to the map.
 function addMarker(location, map, title) {
@@ -78,4 +99,66 @@ function addMarker(location, map, title) {
         title: title,
     });
 }
+
+function toggleHighlight(markerView, property) {
+    if (markerView.content.classList.contains("highlight")) {
+        markerView.content.classList.remove("highlight");
+        markerView.zIndex = null;
+    } else {
+        markerView.content.classList.add("highlight");
+        markerView.zIndex = 1;
+    }
+}
+
+function buildContent(property) {
+    const content = document.createElement("div");
+
+    content.classList.add("property");
+    content.innerHTML = `
+    <div class="icon">
+        <i aria-hidden="true" class="fa fa-icon fa-${property.type}" title="${property.type}"></i>
+        <span class="fa-sr-only">${property.type}</span>
+    </div>
+    <div class="details">
+        <div class="address">${property.address}</div>
+        <div class="description">${property.description}</div>
+    </div>
+    `;
+    return content;
+}
+
+const properties = [{
+    address: "Ashburn, VA",
+    description: "Brownfield, Goldfield",
+    type: "cloud",
+    position: {
+        lat: 39.03,
+        lng: -77.4
+    },
+}, {
+    address: "Columbus, OH",
+    description: "Brownfield, Goldfield",
+    type: "cloud",
+    position: {
+        lat: 39.983334,
+        lng: -82.983330
+    },
+}, {
+    address: "Kings Mountain, NC",
+    description: "Mainframe",
+    type: "server",
+    position: {
+        lat: 35.2514091,
+        lng: -81.3944095
+    },
+}, {
+    address: "Dovers Grove, IL",
+    description: "Mainframe",
+    type: "server",
+    position: {
+        lat: 41.8265995,
+        lng: -88.0261194
+    },
+}, ];
+
 window.initMap = initMap;
