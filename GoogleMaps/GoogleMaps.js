@@ -11,12 +11,12 @@ let labelIndex = 0;
 function initMap() {
     // USA map constant
     const usa = {
-        lat: 39.0,
+        lat: 38.5,
         lng: -82.5
     };
     // create the map
     const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 5.8,
+        zoom: 7,
         center: usa,
         heading: 100,
         tilt: 0,
