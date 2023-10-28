@@ -32,7 +32,7 @@ body {
 /*
  * Property styles in unhighlighted state.
  */
-.property {
+.property { 
   align-items: center;
   background-color: #FFFFFF;
   border-radius: 50%;
