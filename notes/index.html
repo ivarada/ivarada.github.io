@@ -42,6 +42,11 @@
             background-color: #f9f9f9;
             white-space: pre-wrap;
         }
+
+        #messages {
+            margin-top: 10px;
+            color: #e74c3c;
+        }
     </style>
 </head>
 <body>
@@ -52,6 +57,7 @@
     <button onclick="displayLocalStorage()">Display Data</button>
     <button onclick="clearLocalStorage()">Clear Data</button>
     <div id="displayData"></div>
+    <div id="messages"></div>
 
     <script>
         function saveToLocalStorage() {
@@ -62,10 +68,10 @@
                 const dateTime = new Date().toLocaleString();
                 existingData.push({ text: newInputValue, dateTime });
                 localStorage.setItem('userInput', JSON.stringify(existingData));
-                alert('Data saved to localStorage!');
+                updateMessages('Data saved to localStorage!', 'success');
                 document.getElementById('inputText').value = '';
             } else {
-                alert('Please enter some text before saving.');
+                updateMessages('Please enter some text before saving.', 'error');
             }
         }
 
@@ -73,12 +79,13 @@
             const data = JSON.parse(localStorage.getItem('userInput')) || [];
             const markdownContent = data.map(entry => `- **${entry.dateTime}**: ${entry.text}`).join('\n');
             document.getElementById('displayData').textContent = markdownContent;
+            updateMessages('Data displayed from localStorage.', 'info');
         }
 
         function clearLocalStorage() {
             localStorage.removeItem('userInput');
             document.getElementById('displayData').textContent = '';
-            alert('Local storage cleared!');
+            updateMessages('Local storage cleared!', 'success');
         }
 
         function handleKeyPress(event) {
@@ -86,6 +93,11 @@
                 event.preventDefault(); // Prevents adding a new line on Enter key
                 saveToLocalStorage();
             }
+        }
+
+        function updateMessages(message, messageType) {
+            const messagesElement = document.getElementById('messages');
+            messagesElement.innerHTML = `<p class="${messageType}">${message}</p>`;
         }
     </script>
 
