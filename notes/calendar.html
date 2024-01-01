@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full Year Calendar</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #f2f2f2; /* Header background color */
+    }
+    td.weekend {
+      background-color: #e6e6e6; /* Weekend background color */
+    }
+    td.special-day {
+      background-color: #ffcccb; /* Special day background color */
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Full Year Calendar</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Jan</th>
+        <th>Feb</th>
+        <th>Mar</th>
+        <th>Apr</th>
+        <th>May</th>
+        <th>Jun</th>
+        <th>Jul</th>
+        <th>Aug</th>
+        <th>Sep</th>
+        <th>Oct</th>
+        <th>Nov</th>
+        <th>Dec</th>
+      </tr>
+    </thead>
+    <tbody id="calendar-body">
+      <!-- Calendar content will be inserted here -->
+    </tbody>
+  </table>
+
+  <script>
+    // Function to generate a full year calendar
+    function generateCalendar(year) {
+      const monthCodes = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      const calendarBody = document.getElementById('calendar-body');
+
+      monthCodes.forEach((monthCode, monthIndex) => {
+        const daysInMonth = new Date(year, monthIndex + 1, 0).getDate();
+        const monthRow = document.createElement('tr');
+
+        for (let day = 1; day <= daysInMonth; day++) {
+          const cell = document.createElement('td');
+          cell.textContent = day;
+
+          // Highlight weekends (Saturday and Sunday)
+          const dayOfWeek = new Date(year, monthIndex, day).getDay();
+          if (dayOfWeek % 6 === 0) {
+            cell.classList.add('weekend');
+          }
+
+          monthRow.appendChild(cell);
+        }
+
+        calendarBody.appendChild(monthRow);
+      });
+    }
+
+    // Method to add special days
+    function addSpecialDays(specialDays) {
+      specialDays.forEach(day => {
+        const cell = document.querySelector(`#calendar-body tr:nth-child(${day.month}) td:nth-child(${day.day})`);
+        if (cell) {
+          cell.classList.add('special-day');
+        }
+      });
+    }
+
+    // Generate calendar for the current year (you can replace this with any year)
+    generateCalendar(new Date().getFullYear());
+
+    // Example: Add special days (replace with your own special days)
+    const specialDays = [
+      { month: 1, day: 1 },  // Example: January 1st as a special day
+      { month: 2, day: 14 }, // Example: February 14th as a special day
+      // Add more special days as needed
+    ];
+
+    // Call the addSpecialDays method with your special days
+    addSpecialDays(specialDays);
+  </script>
+
+</body>
+</html>
