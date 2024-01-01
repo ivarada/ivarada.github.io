@@ -42,7 +42,6 @@
             white-space: pre-wrap;
         }
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
 
@@ -73,6 +72,7 @@
                 // Store the updated data in localStorage
                 localStorage.setItem('userInput', JSON.stringify(existingData));
                 alert('Data saved to localStorage!');
+                displayLocalStorage();
                 
                 // Clear the input field after saving
                 document.getElementById('inputText').value = '';
@@ -86,18 +86,18 @@
             const dataString = localStorage.getItem('userInput');
             const data = dataString ? JSON.parse(dataString) : [];
 
-            // Convert JSON to Markdown using marked.js
+            // Convert JSON to Markdown
             const markdownContent = data.map(entry => `- **${entry.dateTime}**: ${entry.text}`).join('\n');
 
             // Display the converted Markdown content
-            document.getElementById('displayData').innerHTML = marked(markdownContent);
+            document.getElementById('displayData').textContent = markdownContent;
         }
 
         function clearLocalStorage() {
             // Clear the data from localStorage
             localStorage.removeItem('userInput');
             // Clear the displayed data
-            document.getElementById('displayData').innerHTML = '';
+            document.getElementById('displayData').textContent = '';
             alert('Local storage cleared!');
         }
 
