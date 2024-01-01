@@ -4,12 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Text Field Storage</title>
-    <!-- Add appropriate headers for CORS if needed -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        textarea {
+            width: 300px;
+            height: 100px;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 8px;
+            margin-right: 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #displayData {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            white-space: pre-wrap;
+        }
+    </style>
 </head>
 <body>
 
     <label for="inputText">Enter Text:</label>
-    <input type="text" id="inputText" onkeypress="handleKeyPress(event)">
+    <textarea id="inputText" onkeypress="handleKeyPress(event)"></textarea>
     <button onclick="saveToLocalStorage()">Save</button>
     <button onclick="displayLocalStorage()">Display Data</button>
     <button onclick="clearLocalStorage()">Clear Data</button>
@@ -44,7 +82,8 @@
         }
 
         function handleKeyPress(event) {
-            if (event.key === 'Enter') {
+            if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault(); // Prevents adding a new line on Enter key
                 saveToLocalStorage();
             }
         }
