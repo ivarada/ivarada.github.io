@@ -4,44 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Text Field Storage</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        input {
-            width: 200px;
-            padding: 5px;
-            margin-bottom: 10px;
-        }
-
-        button {
-            padding: 8px;
-            margin-right: 10px;
-            background-color: #4caf50;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-
-        #displayData {
-            margin-top: 20px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            background-color: #f9f9f9;
-            white-space: pre-wrap;
-        }
-    </style>
+    <!-- Add appropriate headers for CORS if needed -->
 </head>
 <body>
 
@@ -54,27 +17,14 @@
 
     <script>
         function saveToLocalStorage() {
-            // Get the existing data from localStorage
-            const existingDataString = localStorage.getItem('userInput');
-            const existingData = existingDataString ? JSON.parse(existingDataString) : [];
+            const existingData = JSON.parse(localStorage.getItem('userInput')) || [];
+            const newInputValue = document.getElementById('inputText').value.trim();
 
-            // Get the new input value
-            const newInputValue = document.getElementById('inputText').value;
-
-            // Check if the new input is not empty
-            if (newInputValue.trim() !== '') {
-                // Get the current date and time
+            if (newInputValue !== '') {
                 const dateTime = new Date().toLocaleString();
-
-                // Append the new input and date/time to the existing data
                 existingData.push({ text: newInputValue, dateTime });
-
-                // Store the updated data in localStorage
                 localStorage.setItem('userInput', JSON.stringify(existingData));
                 alert('Data saved to localStorage!');
-                displayLocalStorage();
-                
-                // Clear the input field after saving
                 document.getElementById('inputText').value = '';
             } else {
                 alert('Please enter some text before saving.');
@@ -82,27 +32,18 @@
         }
 
         function displayLocalStorage() {
-            // Get the data from localStorage
-            const dataString = localStorage.getItem('userInput');
-            const data = dataString ? JSON.parse(dataString) : [];
-
-            // Convert JSON to Markdown
+            const data = JSON.parse(localStorage.getItem('userInput')) || [];
             const markdownContent = data.map(entry => `- **${entry.dateTime}**: ${entry.text}`).join('\n');
-
-            // Display the converted Markdown content
             document.getElementById('displayData').textContent = markdownContent;
         }
 
         function clearLocalStorage() {
-            // Clear the data from localStorage
             localStorage.removeItem('userInput');
-            // Clear the displayed data
             document.getElementById('displayData').textContent = '';
             alert('Local storage cleared!');
         }
 
         function handleKeyPress(event) {
-            // Check if the Enter key is pressed (key code 13)
             if (event.key === 'Enter') {
                 saveToLocalStorage();
             }
