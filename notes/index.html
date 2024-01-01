@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Field Storage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 200px;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 8px;
+            margin-right: 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #displayData {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            white-space: pre-wrap;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+
+    <label for="inputText">Enter Text:</label>
+    <input type="text" id="inputText" onkeypress="handleKeyPress(event)">
+    <button onclick="saveToLocalStorage()">Save</button>
+    <button onclick="displayLocalStorage()">Display Data</button>
+    <button onclick="clearLocalStorage()">Clear Data</button>
+    <div id="displayData"></div>
+
+    <script>
+        function saveToLocalStorage() {
+            // Get the existing data from localStorage
+            const existingDataString = localStorage.getItem('userInput');
+            const existingData = existingDataString ? JSON.parse(existingDataString) : [];
+
+            // Get the new input value
+            const newInputValue = document.getElementById('inputText').value;
+
+            // Check if the new input is not empty
+            if (newInputValue.trim() !== '') {
+                // Get the current date and time
+                const dateTime = new Date().toLocaleString();
+
+                // Append the new input and date/time to the existing data
+                existingData.push({ text: newInputValue, dateTime });
+
+                // Store the updated data in localStorage
+                localStorage.setItem('userInput', JSON.stringify(existingData));
+                alert('Data saved to localStorage!');
+                
+                // Clear the input field after saving
+                document.getElementById('inputText').value = '';
+            } else {
+                alert('Please enter some text before saving.');
+            }
+        }
+
+        function displayLocalStorage() {
+            // Get the data from localStorage
+            const dataString = localStorage.getItem('userInput');
+            const data = dataString ? JSON.parse(dataString) : [];
+
+            // Convert JSON to Markdown using marked.js
+            const markdownContent = data.map(entry => `- **${entry.dateTime}**: ${entry.text}`).join('\n');
+
+            // Display the converted Markdown content
+            document.getElementById('displayData').innerHTML = marked(markdownContent);
+        }
+
+        function clearLocalStorage() {
+            // Clear the data from localStorage
+            localStorage.removeItem('userInput');
+            // Clear the displayed data
+            document.getElementById('displayData').innerHTML = '';
+            alert('Local storage cleared!');
+        }
+
+        function handleKeyPress(event) {
+            // Check if the Enter key is pressed (key code 13)
+            if (event.key === 'Enter') {
+                saveToLocalStorage();
+            }
+        }
+    </script>
+
+</body>
+</html>
