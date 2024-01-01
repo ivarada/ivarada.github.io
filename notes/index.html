@@ -69,6 +69,7 @@
                 existingData.push({ text: newInputValue, dateTime });
                 localStorage.setItem('userInput', JSON.stringify(existingData));
                 updateMessages('Data saved to localStorage!', 'success');
+                displayLocalStorage();
                 document.getElementById('inputText').value = '';
             } else {
                 updateMessages('Please enter some text before saving.', 'error');
