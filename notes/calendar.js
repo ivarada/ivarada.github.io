@@ -5,8 +5,13 @@ function getDayLetter(dayOfWeek) {
 
 function isSpecialDay(year, month, day) {
     const specialDays = [
-        { month: 1, day: 1 },  // Example: New Year's Day
+        { month: 2, day: 5 },
+        { month: 2, day: 10 },
+        { month: 4, day: 15 },
         { month: 7, day: 4 },  // Example: Independence Day
+        { month: 8, day: 25 },
+        { month: 9, day: 15 },
+        { month: 9, day: 30 },
         // Add more special days here
     ];
 
@@ -16,7 +21,7 @@ function isSpecialDay(year, month, day) {
 function createFullYearCalendar(year) {
     const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
                         "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-    let calendar = "<tr>";
+    let calendar = '<tr><th colspan="3">Q1</th><th colspan="3">Q2</th><th colspan="3">Q3</th><th colspan="3">Q4</th></tr><tr>';
 
     // Month headers
     for (let month = 0; month < 12; month++) {
