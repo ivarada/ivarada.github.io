@@ -30,9 +30,11 @@ function createFullYearCalendar(year) {
     calendar += "</tr>";
 
     const maxDays = 31;
+    let numOfDays = 0;
 
     // Days
     for (let day = 1; day <= maxDays; day++) {
+        numOfDays ++;
         calendar += "<tr>";
         for (let month = 0; month < 12; month++) {
             let daysInMonth = new Date(year, month + 1, 0).getDate();
