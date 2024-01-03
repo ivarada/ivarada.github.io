@@ -25,6 +25,8 @@ function isSpecialDay(year, month, day) {
 function createFullYearCalendar(year) {
     const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
                         "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    let today = new Date(); // Set today's date
+    today.setDate(today.getDate() - 1); // Set One Bay Back
     let calendar = '<tr><th colspan="3">Q1</th><th colspan="3">Q2</th><th colspan="3">Q3</th><th colspan="3">Q4</th></tr><tr>';
 
     // Month headers
@@ -48,6 +50,9 @@ function createFullYearCalendar(year) {
                     className = "special-day";
                 } else if (dayOfWeek === 0 || dayOfWeek === 6) {
                     className = "weekend";
+                }
+                if (date < today){
+                    className ="past-day";
                 }
                 let dayLetter = getDayLetter(dayOfWeek);
                 calendar += `<td class="${className}">${day}<span class="daysIntoYear">${dayLetter} ${daysIntoYear(date)}</span></td>`;
