@@ -1,5 +1,9 @@
+function daysIntoYear(date){
+    return (Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()) - Date.UTC(date.getFullYear(), 0, 0)) / 24 / 60 / 60 / 1000;
+}
+
 function getDayLetter(dayOfWeek) {
-    const dayLetters = ["S ", "M ", "T ", "W ", "T ", "F ", "S "];
+    const dayLetters = ["S", "M", "T", "W", "T", "F", "S"];
     return dayLetters[dayOfWeek];
 }
 
@@ -30,11 +34,9 @@ function createFullYearCalendar(year) {
     calendar += "</tr>";
 
     const maxDays = 31;
-    let numOfDays = 0;
 
     // Days
     for (let day = 1; day <= maxDays; day++) {
-        numOfDays ++;
         calendar += "<tr>";
         for (let month = 0; month < 12; month++) {
             let daysInMonth = new Date(year, month + 1, 0).getDate();
@@ -48,7 +50,7 @@ function createFullYearCalendar(year) {
                     className = "weekend";
                 }
                 let dayLetter = getDayLetter(dayOfWeek);
-                calendar += `<td class="${className}">${dayLetter}${day}</td>`;
+                calendar += `<td class="${className}">${day}<span class="daysIntoYear">${dayLetter} ${daysIntoYear(date)}</span></td>`;
             } else {
                 calendar += "<td></td>";
             }
