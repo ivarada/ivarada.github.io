@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Text Expander with LocalStorage and Bootstrap</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script>
+        let expansions = {};
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('expansions')) {
+                expansions = JSON.parse(localStorage.getItem('expansions'));
+            }
+            document.getElementById('text-input').addEventListener('input', expandText);
+            document.getElementById('add-expander').addEventListener('click', addExpander);
+            updateExpansionsTable();
+        });
+
+        function expandText(event) {
+            const inputField = event.target;
+            Object.keys(expansions).forEach(shortcut => {
+                if (inputField.value.includes(shortcut)) {
+                    inputField.value = inputField.value.replace(shortcut, expansions[shortcut]);
+                }
+            });
+        }
+
+        function addExpander() {
+            const shortcut = document.getElementById('shortcut').value;
+            const expansion = document.getElementById('expansion').value;
+
+            if (shortcut && expansion) {
+                expansions[shortcut] = expansion;
+                localStorage.setItem('expansions', JSON.stringify(expansions));
+                updateExpansionsTable();
+                document.getElementById('shortcut').value = '';
+                document.getElementById('expansion').value = '';
+            } else {
+                alert('Please enter both a shortcut and an expansion.');
+            }
+        }
+
+        function updateExpansionsTable() {
+            const tableBody = document.getElementById('expansions-table-body');
+            tableBody.innerHTML = '';
+
+            Object.keys(expansions).forEach(shortcut => {
+                const row = `<tr><td>${shortcut}</td><td>${expansions[shortcut]}</td></tr>`;
+                tableBody.innerHTML += row;
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <textarea id="text-input" class="form-control" rows="10" placeholder="Type here..."></textarea>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-8 offset-md-2">
+                <div class="mb-3">
+                    <input type="text" id="shortcut" class="form-control mb-2" placeholder="Enter shortcut">
+                    <input type="text" id="expansion" class="form-control mb-2" placeholder="Enter expansion text">
+                    <button id="add-expander" class="btn btn-primary">Add Expander</button>
+                </div>
+                <h3>Expansions List</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Shortcut</th>
+                            <th scope="col">Expands to</th>
+                        </tr>
+                    </thead>
+                    <tbody id="expansions-table-body">
+                        <!-- Expansions will be added here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS and its dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
