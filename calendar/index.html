@@ -7,6 +7,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <style>
+        .container{
+            border: 1px solid #000000;
+        }
         .weekend {
             background-color: #ffcccc; /* Light red background for weekends */
         }
@@ -14,9 +17,8 @@
             background-color: #ccff00; /* Light green background for special days */
         }
         .past-day{
-background: rgb(34,193,195);
-background: linear-gradient(310deg, rgba(34,193,195,1) 0%, rgba(218,227,218,0.12648809523809523) 100%);
-
+            background: rgb(0, 0, 0);
+            background: linear-gradient(310deg, rgba(100, 200, 100, 1) 0%, rgba(100, 200, 100, 0.20) 100%);
         }
         .daysIntoYear{
             display: inline-block;
@@ -50,18 +52,18 @@ background: linear-gradient(310deg, rgba(34,193,195,1) 0%, rgba(218,227,218,0.12
             color: #333;
             padding: 10px;
         }
-        h2 {
+        h2{
           padding: 5px;
           background-color: #e0f8f2;
-          width: 1440px;
+          /* width: 1440px; */
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h2 class="my-4 text-center">2024 Full Year Calendar</h2>
+    <div class="position-left">
+        <h2 class="text-center" id="title">2024 Full Year Calendar</h2>
+        <h3 class="text-center"><span id="today" class="badge text-bg-primary"></span></h3>
         <table id="calendar" class="table table-bordered">
-            <caption>2024 Calendar</caption>
         </table>
     </div>
 

@@ -55,7 +55,7 @@ function createFullYearCalendar(year) {
                     className ="past-day";
                 }
                 let dayLetter = getDayLetter(dayOfWeek);
-                calendar += `<td class="${className}">${day}<span class="daysIntoYear">${dayLetter} ${daysIntoYear(date)}</span></td>`;
+                calendar += `<td class="${className}">${day}<span class="daysIntoYear">${dayLetter} ${daysIntoYear(date)} ${Math.ceil(daysIntoYear(date) / 7)}</span></td>`;
             } else {
                 calendar += "<td></td>";
             }
@@ -67,5 +67,12 @@ function createFullYearCalendar(year) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("calendar").innerHTML = createFullYearCalendar(2024);
+    let currentDate = new Date();
+    let currentYear = currentDate.getFullYear();
+    let currentWeek = Math.ceil(daysIntoYear(currentDate) / 7);
+    let currentQuarter = Math.ceil(daysIntoYear(currentDate) / 90);
+    let daysPassed = daysIntoYear(currentDate);
+    document.getElementById("calendar").innerHTML = createFullYearCalendar(currentYear);
+    document.getElementById("title").innerHTML = currentYear + " Full Year Calendar";
+    document.getElementById("today").innerHTML = currentDate +  "<br/><br/>" + "Day: D" + daysPassed + " - " + "Week: W" + currentWeek + " - " + "Quarter: Q" + currentQuarter; 
 });
