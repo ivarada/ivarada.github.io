@@ -1,0 +1,11 @@
+# Site-level variables
+title: Your Site Title
+description: A short description of your site.
+author: Your Name
+
+# Jekyll theme configuration
+# Use one of the official Jekyll themes
+theme: minima
+
+# Or a remote theme from a GitHub repository
+# remote_theme: jekyll/minima
