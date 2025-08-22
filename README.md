@@ -1,5 +1,5 @@
 ---
-title: Varada's GitHub
+title: README
 ---
 
-### Varada's GitHub to share documents and supporting materials for my publications.
+### Varada's GitHub Readme
