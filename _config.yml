@@ -7,5 +7,9 @@ author: Varada
 # Use one of the official Jekyll themes
 theme: minima
 
+header_pages:
+ - index.md
+ - 2025.md
+
 # Or a remote theme from a GitHub repository
 # remote_theme: jekyll/minima
