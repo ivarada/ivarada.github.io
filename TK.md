@@ -1,5 +1,5 @@
 ---
-title: TK in Writing and Drafting: Complete Guide
+title: TK in Writing and Drafting - Complete Guide
 ---
 
 ## What is "TK"?
