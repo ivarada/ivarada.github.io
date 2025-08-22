@@ -1,7 +1,5 @@
 ---
-title: My First Page
+title: Varada's GitHub
 ---
 
-# My First Page
-
-This is the content of my first page.
+# Varada's GitHub to share documents and supporting materials for my publications.
