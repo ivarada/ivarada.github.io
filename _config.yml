@@ -11,8 +11,8 @@ header_pages:
  - index.md
  - 2025.md
 
-plugins:
-  - jekyll-sitemap
+# plugins:
+#  - jekyll-sitemap
 
 # Exclude these pages from the sitemap
 # exclude:
