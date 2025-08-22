@@ -10,6 +10,9 @@ theme: minima
 header_pages:
  - index.md
  - 2025.md
+minima:
+  social_links:
+    linkedin: ivarada
 
 # Or a remote theme from a GitHub repository
 # remote_theme: jekyll/minima
