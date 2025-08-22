@@ -1,6 +1,6 @@
 # Site-level variables
 title: Varada's GitHub
-description: Share documents and supporting materials for my publications.
+description: Sharing documents and supporting materials for my publications.
 # author: Varada
 
 # Jekyll theme configuration
@@ -10,9 +10,10 @@ theme: minima
 header_pages:
  - index.md
  - 2025.md
+
 minima:
   social_links:
-    linkedin: ivarada
+    linkedin: jekyll-docs
 
 # Or a remote theme from a GitHub repository
 # remote_theme: jekyll/minima
