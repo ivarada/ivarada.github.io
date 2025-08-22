@@ -11,9 +11,20 @@ header_pages:
  - index.md
  - 2025.md
 
-minima:
-  social_links:
-    linkedin: jekyll-docs
+plugins:
+  - jekyll-sitemap
+
+# Exclude these pages from the sitemap
+# exclude:
+#  - "/some_directory/"
+#  - "some_page.html"
+
+# If you want to use a custom sitemap, you can specify its path
+# sitemap: /custom_sitemap.xml
+
+# minima:
+#  social_links:
+#    linkedin: jekyll-docs
 
 # Or a remote theme from a GitHub repository
 # remote_theme: jekyll/minima
