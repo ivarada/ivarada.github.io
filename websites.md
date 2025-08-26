@@ -11,7 +11,7 @@ Summary:
 *   **Focus on Key Tech Domains:** The site covers significant technology zones such as Culture and Methodologies (Agile, Career Development), Data Engineering (AI/ML, Big Data, Databases), Software Design and Architecture (Cloud, Microservices, Security), Coding (Frameworks, Languages, Tools), and Testing, Deployment, and Maintenance (DevOps, CI/CD, Monitoring).
 *   **Community-Driven Content:** DZone encourages contributions from its community, allowing developers to share their expertise through article submissions and participate in community research for Trend Reports.
 
-## Meidum
+## Medium
 
 [Medium](https://medium.com) is an online publishing platform that allows individuals and organizations to share stories and ideas.
 
