@@ -36,10 +36,9 @@
   <script>
     const dataUrl = 'https://ivarada.github.io/html/tla.txt';
     
-    // Global variables for state management
     let tableData = [];
     let headers = [];
-    let sortColumn = -1;
+    let sortColumn = -1; 
     let sortDirection = 'asc';
     let searchTerm = '';
 
@@ -51,10 +50,16 @@
         tableData = results.data;
         if (tableData.length > 0) {
           headers = Object.keys(tableData[0]);
+          
+          // --- NEW: Set default sort to the 'TLA' column ---
+          const tlaIndex = headers.indexOf('TLA');
+          if (tlaIndex !== -1) {
+            sortColumn = tlaIndex; // Set the column index to sort by
+          }
         }
-        // Add event listener for the search input
+        
         document.getElementById('search-input').addEventListener('input', handleSearch);
-        renderTable(); // Initial table render
+        renderTable(); 
       },
       error: function(err) {
         console.error("Error parsing data:", err);
@@ -62,11 +67,9 @@
       }
     });
 
-    // --- NEW: Master function to render the table based on current state ---
     function renderTable() {
       let displayData = [...tableData];
 
-      // 1. Filter the data based on the search term
       if (searchTerm) {
         displayData = displayData.filter(row => {
           return Object.values(row).some(value => 
@@ -75,7 +78,6 @@
         });
       }
 
-      // 2. Sort the filtered data
       if (sortColumn !== -1) {
         const headerKey = headers[sortColumn];
         displayData.sort((a, b) => {
@@ -91,16 +93,13 @@
         }
       }
       
-      // 3. Pass the final data to the build function
       buildTable(displayData);
     }
 
-    // --- MODIFIED: This function now only handles the HTML building part ---
     function buildTable(data) {
       const tableHead = document.querySelector("#my-table thead");
       const tableBody = document.querySelector("#my-table tbody");
       
-      // Build header
       let headerHTML = "<tr>";
       headers.forEach((header, index) => {
         let className = '';
@@ -112,12 +111,10 @@
       headerHTML += "</tr>";
       tableHead.innerHTML = headerHTML;
 
-      // Add click listeners to headers
       document.querySelectorAll("#my-table thead th").forEach(th => {
         th.addEventListener("click", handleHeaderClick);
       });
       
-      // Build body
       let bodyHTML = "";
       for (const row of data) {
         bodyHTML += "<tr>";
@@ -129,13 +126,11 @@
       tableBody.innerHTML = bodyHTML;
     }
 
-    // --- NEW: Event handler for the search input ---
     function handleSearch(event) {
       searchTerm = event.target.value.toLowerCase();
       renderTable();
     }
 
-    // --- MODIFIED: Event handler for sorting now calls renderTable ---
     function handleHeaderClick(event) {
       const clickedColumnIndex = parseInt(event.target.dataset.columnIndex);
 
