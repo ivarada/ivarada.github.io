@@ -3,42 +3,97 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Searchable & Sortable CSV Data Table</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <title>Searchable & Sortable List</title>
   <style>
-    body { font-family: sans-serif; }
-    #search-container { margin-bottom: 10px; }
-    #search-input { padding: 6px; width: 250px; }
-    table { width: 80%; border-collapse: collapse; }
-    th, td { padding: 8px 12px; border: 1px solid #ccc; text-align: left; }
-    thead th { background-color: #f2f2f2; cursor: pointer; position: relative; }
-    thead th:hover { background-color: #e6e6e6; }
-    thead th::after { content: ''; position: absolute; right: 8px; top: 50%; transform: translateY(-50%); opacity: 0.5; }
-    thead th.sort-asc::after { content: ' ▲'; }
-    thead th.sort-desc::after { content: ' ▼'; }
+    /* --- Styles for Centering --- */
+    body {
+      font-family: sans-serif;
+      margin: 0; /* Remove default margin */
+      display: flex; /* Use flexbox for easy centering */
+      justify-content: center; /* Center horizontally */
+      align-items: center; /* Center vertically */
+      min-height: 100vh; /* Make body at least the height of the screen */
+      background-color: #f7f7f7; /* Optional: Add a light background */
+    }
+
+    .container {
+      /* This new class will wrap all your content */
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      background-color: white;
+    }
+
+    /* --- Modified Existing Styles --- */
+    #search-container { 
+      margin-bottom: 10px; 
+    }
+    #search-input { 
+      padding: 6px; 
+      width: 250px; 
+    }
+
+    table { 
+      /* width: 100%; <-- REMOVED this line */
+      border-collapse: collapse; 
+    }
+
+    th, td { 
+      padding: 8px 12px; 
+      border: 1px solid #ccc; 
+      text-align: left; 
+    }
+
+    thead th { 
+      background-color: #f2f2f2; 
+      cursor: pointer; 
+      position: relative; 
+    }
+    thead th:hover { 
+      background-color: #e6e6e6; 
+    }
+    thead th::after { 
+      content: ''; 
+      position: absolute; 
+      right: 8px; 
+      top: 50%; 
+      transform: translateY(-50%); 
+      opacity: 0.5; 
+    }
+    thead th.sort-asc::after { 
+      content: ' ▲'; 
+    }
+    thead th.sort-desc::after { 
+      content: ' ▼'; 
+    }
   </style>
 </head>
 <body>
 
-  <h2>TLA - Three Letter Acronyms List</h2>
+  <div class="container">
+    <h2>My Sortable & Downloadable List</h2>
 
-  <div id="search-container">
-    <label for="search-input">Search:</label>
-    <input type="search" id="search-input" placeholder="Search all columns...">
+    <div id="search-container">
+      <label for="search-input">Search:</label>
+      <input type="search" id="search-input" placeholder="Search all columns...">
+    </div>
+    
+    <table id="my-table">
+      <thead></thead>
+      <tbody></tbody>
+    </table>
   </div>
-  
-  <table id="my-table">
-    <thead></thead>
-    <tbody></tbody>
-  </table>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
   
   <script>
     const dataUrl = 'https://ivarada.github.io/html/tla.txt';
     
+    // Global variables for state management
     let tableData = [];
     let headers = [];
-    let sortColumn = -1; 
+    let sortColumn = -1;
     let sortDirection = 'asc';
     let searchTerm = '';
 
@@ -51,10 +106,10 @@
         if (tableData.length > 0) {
           headers = Object.keys(tableData[0]);
           
-          // --- NEW: Set default sort to the 'TLA' column ---
+          // Set default sort to the 'TLA' column
           const tlaIndex = headers.indexOf('TLA');
           if (tlaIndex !== -1) {
-            sortColumn = tlaIndex; // Set the column index to sort by
+            sortColumn = tlaIndex;
           }
         }
         
