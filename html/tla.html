@@ -9,25 +9,31 @@
     /* --- Styles for Centering --- */
     body {
       font-family: sans-serif;
-      margin: 0; /* Remove default margin */
-      display: flex; /* Use flexbox for easy centering */
-      justify-content: center; /* Center horizontally */
-      align-items: center; /* Center vertically */
-      min-height: 100vh; /* Make body at least the height of the screen */
-      background-color: #f7f7f7; /* Optional: Add a light background */
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f7f7f7;
     }
 
     .container {
-      /* This new class will wrap all your content */
       padding: 20px;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       background-color: white;
     }
+    
+    /* --- NEW: Style for the entry count --- */
+    #entry-count {
+      margin-bottom: 15px;
+      font-style: italic;
+      color: #555;
+    }
 
     /* --- Modified Existing Styles --- */
     #search-container { 
-      margin-bottom: 10px; 
+      margin-bottom: 15px; 
     }
     #search-input { 
       padding: 6px; 
@@ -35,7 +41,6 @@
     }
 
     table { 
-      /* width: 100%; <-- REMOVED this line */
       border-collapse: collapse; 
     }
 
@@ -61,18 +66,16 @@
       transform: translateY(-50%); 
       opacity: 0.5; 
     }
-    thead th.sort-asc::after { 
-      content: ' ▲'; 
-    }
-    thead th.sort-desc::after { 
-      content: ' ▼'; 
-    }
+    thead th.sort-asc::after { content: ' ▲'; }
+    thead th.sort-desc::after { content: ' ▼'; }
   </style>
 </head>
 <body>
 
   <div class="container">
     <h2>My Sortable & Downloadable List</h2>
+    
+    <div id="entry-count"></div>
 
     <div id="search-container">
       <label for="search-input">Search:</label>
@@ -90,7 +93,6 @@
   <script>
     const dataUrl = 'https://ivarada.github.io/html/tla.txt';
     
-    // Global variables for state management
     let tableData = [];
     let headers = [];
     let sortColumn = -1;
@@ -105,12 +107,8 @@
         tableData = results.data;
         if (tableData.length > 0) {
           headers = Object.keys(tableData[0]);
-          
-          // Set default sort to the 'TLA' column
           const tlaIndex = headers.indexOf('TLA');
-          if (tlaIndex !== -1) {
-            sortColumn = tlaIndex;
-          }
+          if (tlaIndex !== -1) sortColumn = tlaIndex;
         }
         
         document.getElementById('search-input').addEventListener('input', handleSearch);
@@ -124,6 +122,7 @@
 
     function renderTable() {
       let displayData = [...tableData];
+      const countElement = document.getElementById('entry-count');
 
       if (searchTerm) {
         displayData = displayData.filter(row => {
@@ -131,6 +130,13 @@
             String(value).toLowerCase().includes(searchTerm)
           );
         });
+      }
+
+      // --- NEW: Update the entry count text ---
+      if (tableData.length === displayData.length) {
+        countElement.textContent = `Total entries: ${tableData.length}`;
+      } else {
+        countElement.textContent = `Showing ${displayData.length} of ${tableData.length} entries`;
       }
 
       if (sortColumn !== -1) {

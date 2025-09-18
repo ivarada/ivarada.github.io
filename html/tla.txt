@@ -63,7 +63,7 @@ IOR,Institute of Operational Risk
 IRM,Institute of Risk Management
 IRE,Isolated Recovery Environment
 ITIL,Information Technology Infrastructure Library 
-IT- Information Technology 
+IT,Information Technology 
 ITOM,IT Operations Management 
 ITSM,Information Technology Service Management 
 KAM,Knowledge Adoption Model 
@@ -141,7 +141,7 @@ TAM,Technology Adoption Model
 TBD,To Be Determined 
 TBR,Theories of Bounded Rationality 
 TBR,To Be Read 
-TCO Total Cost of Ownership 
+TCO,Total Cost of Ownership 
 TILT,Transparency in Learning and Teaching (TILT Framework) 
 TLA,Three Letter Acronym 
 TLA,Three Letter Acronyms 
