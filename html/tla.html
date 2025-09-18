@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sortable CSV Data Table</title>
+  <title>Searchable & Sortable CSV Data Table</title>
   <style>
     body { font-family: sans-serif; }
+    #search-container { margin-bottom: 10px; }
+    #search-input { padding: 6px; width: 250px; }
     table { width: 100%; border-collapse: collapse; }
     th, td { padding: 8px 12px; border: 1px solid #ccc; text-align: left; }
     thead th { background-color: #f2f2f2; cursor: pointer; position: relative; }
@@ -18,6 +20,11 @@
 <body>
 
   <h2>My Sortable & Downloadable List</h2>
+
+  <div id="search-container">
+    <label for="search-input">Search:</label>
+    <input type="search" id="search-input" placeholder="Search all columns...">
+  </div>
   
   <table id="my-table">
     <thead></thead>
@@ -27,27 +34,27 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
   
   <script>
-    // --- Using .txt for reliability on GitHub Pages ---
     const dataUrl = 'https://ivarada.github.io/html/tla.txt';
     
-    // --- Global variables ---
+    // Global variables for state management
     let tableData = [];
-    let headers = []; // <-- NEW: Store headers permanently
+    let headers = [];
     let sortColumn = -1;
     let sortDirection = 'asc';
+    let searchTerm = '';
 
     Papa.parse(dataUrl, {
       download: true,
       header: true,
-      skipEmptyLines: true, // <-- Good practice
+      skipEmptyLines: true,
       complete: function(results) {
         tableData = results.data;
-        // --- FIX: Get headers only ONCE and store them ---
         if (tableData.length > 0) {
           headers = Object.keys(tableData[0]);
         }
-        console.log("Parsed Data:", tableData);
-        buildTable(); 
+        // Add event listener for the search input
+        document.getElementById('search-input').addEventListener('input', handleSearch);
+        renderTable(); // Initial table render
       },
       error: function(err) {
         console.error("Error parsing data:", err);
@@ -55,42 +62,80 @@
       }
     });
 
-    function buildTable() {
+    // --- NEW: Master function to render the table based on current state ---
+    function renderTable() {
+      let displayData = [...tableData];
+
+      // 1. Filter the data based on the search term
+      if (searchTerm) {
+        displayData = displayData.filter(row => {
+          return Object.values(row).some(value => 
+            String(value).toLowerCase().includes(searchTerm)
+          );
+        });
+      }
+
+      // 2. Sort the filtered data
+      if (sortColumn !== -1) {
+        const headerKey = headers[sortColumn];
+        displayData.sort((a, b) => {
+          const valA = a[headerKey] || '';
+          const valB = b[headerKey] || '';
+          if (valA < valB) return -1;
+          if (valA > valB) return 1;
+          return 0;
+        });
+
+        if (sortDirection === 'desc') {
+          displayData.reverse();
+        }
+      }
+      
+      // 3. Pass the final data to the build function
+      buildTable(displayData);
+    }
+
+    // --- MODIFIED: This function now only handles the HTML building part ---
+    function buildTable(data) {
       const tableHead = document.querySelector("#my-table thead");
       const tableBody = document.querySelector("#my-table tbody");
       
-      if (tableData.length > 0) {
-        // Build the header using the stored 'headers' variable
-        let headerHTML = "<tr>";
-        headers.forEach((header, index) => {
-          let className = '';
-          if (index === sortColumn) {
-            className = sortDirection === 'asc' ? 'sort-asc' : 'sort-desc';
-          }
-          headerHTML += `<th class="${className}" data-column-index="${index}">${header}</th>`;
-        });
-        headerHTML += "</tr>";
-        tableHead.innerHTML = headerHTML;
-
-        // Add click listeners to headers
-        document.querySelectorAll("#my-table thead th").forEach(th => {
-          th.addEventListener("click", handleHeaderClick);
-        });
-        
-        // Build the body using the stored 'headers' variable
-        let bodyHTML = "";
-        for (const row of tableData) {
-          bodyHTML += "<tr>";
-          for (const header of headers) {
-            // Use empty string for any missing values to prevent errors
-            bodyHTML += `<td>${row[header] || ""}</td>`; 
-          }
-          bodyHTML += "</tr>";
+      // Build header
+      let headerHTML = "<tr>";
+      headers.forEach((header, index) => {
+        let className = '';
+        if (index === sortColumn) {
+          className = sortDirection === 'asc' ? 'sort-asc' : 'sort-desc';
         }
-        tableBody.innerHTML = bodyHTML;
+        headerHTML += `<th class="${className}" data-column-index="${index}">${header}</th>`;
+      });
+      headerHTML += "</tr>";
+      tableHead.innerHTML = headerHTML;
+
+      // Add click listeners to headers
+      document.querySelectorAll("#my-table thead th").forEach(th => {
+        th.addEventListener("click", handleHeaderClick);
+      });
+      
+      // Build body
+      let bodyHTML = "";
+      for (const row of data) {
+        bodyHTML += "<tr>";
+        for (const header of headers) {
+          bodyHTML += `<td>${row[header] || ""}</td>`;
+        }
+        bodyHTML += "</tr>";
       }
+      tableBody.innerHTML = bodyHTML;
     }
 
+    // --- NEW: Event handler for the search input ---
+    function handleSearch(event) {
+      searchTerm = event.target.value.toLowerCase();
+      renderTable();
+    }
+
+    // --- MODIFIED: Event handler for sorting now calls renderTable ---
     function handleHeaderClick(event) {
       const clickedColumnIndex = parseInt(event.target.dataset.columnIndex);
 
@@ -100,22 +145,8 @@
         sortColumn = clickedColumnIndex;
         sortDirection = 'asc';
       }
-
-      const headerKey = headers[sortColumn];
-      tableData.sort((a, b) => {
-        const valA = a[headerKey] || ''; // Use empty string for comparison if value is missing
-        const valB = b[headerKey] || '';
-
-        if (valA < valB) return -1;
-        if (valA > valB) return 1;
-        return 0;
-      });
       
-      if (sortDirection === 'desc') {
-        tableData.reverse();
-      }
-      
-      buildTable();
+      renderTable();
     }
   </script>
 
