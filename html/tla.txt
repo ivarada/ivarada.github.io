@@ -42,7 +42,7 @@ EPIC,Enterprise Project Investment Committee
 EPMO,Enterprise Project Management Office 
 ERM,Enterprise Risk Management 
 FDP,Freddie Data Platform 
-FEAR,Feel, Examine, Articulate, Reflect 
+FEAR,"Feel, Examine, Articulate, Reflect"
 FMI,Financial Market Infrastructure 
 FoR,Frame of Reference
 FRA,Firm Resiliency Assessment
@@ -58,7 +58,7 @@ ICE,Intercontinental Exchange's
 ICMP,Internet Control Messaging Protocol 
 ICS,Industrial Control Systems 
 IDQ,Informatica Data Quality 
-IDR -> Independent Design Review 
+IDR,Independent Design Review 
 IOR,Institute of Operational Risk 
 IRM,Institute of Risk Management
 IRE,Isolated Recovery Environment
@@ -81,7 +81,7 @@ MDR,Metadata Repository
 MOC,Map of Content 
 MRA,Matters Requiring Attention 
 MSA,Master Service Agreement 
-MVC -> Minimal Viable Company 
+MVC,Minimal Viable Company 
 NAF,Needs Affordances Features 
 NFR,Non-Functional Requirements 
 NLP,Natural Language Processing 
@@ -90,7 +90,7 @@ NTR,New Technology Request
 OCR,Optical Character Recognition 
 ODL,Operational Data Lake 
 ODP,Oversight Discovery Project 
-OKR  ,Objectives and Key Results 
+OKR,Objectives and Key Results 
 OKR,Organizational Knowledge Repositories 
 OLA,Operational Level Agreement 
 OPA,Organizational Process Assets 
@@ -121,13 +121,13 @@ RVP,Remediation Pending Validation
 SIEM,Security Incident and event management 
 SIG,Strategic Investment Group 
 SLA,Service Level Agreement 
-SMART,Specific, Measurable, Attainable, Relevant, and Time-Bound 
+SMART,"Specific, Measurable, Attainable, Relevant, and Time-Bound"
 SME,Subject Matter Expert 
 SNMP,Simple Network Management Protocol 
 SNS,Social Networking Sites 
 SOAP,Simple Object Access Protocol 
-SOAR,Security, Orchestration, Automation 
-SOAR,Security Orchestration, Automation, and Response 
+SOAR,"Security, Orchestration, Automation" 
+SOAR,"Security Orchestration, Automation, and Response"
 SOR,Source of Record 
 SOR,System of Record 
 SOT,Source of Truth 
