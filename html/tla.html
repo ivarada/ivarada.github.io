@@ -3,12 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CSV Data Table</title>
+  <title>Sortable CSV Data Table</title>
   <style>
     body { font-family: sans-serif; }
     table { width: 100%; border-collapse: collapse; }
     th, td { padding: 8px 12px; border: 1px solid #ccc; text-align: left; }
-    thead { background-color: #f2f2f2; }
+    
+    /* Style for the sortable header */
+    thead th { 
+      background-color: #f2f2f2;
+      cursor: pointer;
+      position: relative;
+    }
+    thead th:hover { background-color: #e6e6e6; }
+
+    /* Arrows for sorting direction (using CSS content) */
+    thead th::after {
+      content: '';
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0.5;
+    }
+    thead th.sort-asc::after { content: ' ▲'; }
+    thead th.sort-desc::after { content: ' ▼'; }
   </style>
 </head>
 <body>
@@ -23,46 +42,55 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
   
   <script>
-    // 2. Define the URL to your CSV file
     const csvUrl = 'https://ivarada.github.io/html/tla.csv';
+    
+    // --- NEW: Global variables to store data and sorting state ---
+    let tableData = [];
+    let sortColumn = -1; // -1 means no column is sorted initially
+    let sortDirection = 'asc';
 
-    // 3. Use Papa Parse to fetch and parse the CSV
     Papa.parse(csvUrl, {
-      download: true,   // Tells Papa Parse to fetch the file from the URL
-      header: true,     // Assumes the first row of the CSV is the header
+      download: true,
+      header: true,
       complete: function(results) {
-        // This function runs when parsing is complete
-        console.log("Parsed Data:", results.data); // For debugging
-        buildTable(results.data);
+        tableData = results.data; // Store the data globally
+        console.log("Parsed Data:", tableData);
+        buildTable(); // Initial table build
       },
       error: function(err) {
-        // This function runs if there's an error fetching or parsing
         console.error("Error parsing CSV:", err);
-        document.querySelector("tbody").innerHTML = `<tr><td colspan="100%">Error loading data. Please check the console.</td></tr>`;
+        document.querySelector("tbody").innerHTML = `<tr><td colspan="100%">Error loading data.</td></tr>`;
       }
     });
 
-    // 4. This function builds the HTML table from the data
-    function buildTable(data) {
+    // --- MODIFIED: This function now builds and rebuilds the table ---
+    function buildTable() {
       const tableHead = document.querySelector("#my-table thead");
       const tableBody = document.querySelector("#my-table tbody");
       
-      if (data.length > 0) {
-        // Create the table header
-        const headers = Object.keys(data[0]);
+      if (tableData.length > 0) {
+        // Build the header
+        const headers = Object.keys(tableData[0]);
         let headerHTML = "<tr>";
-        for (const header of headers) {
-          headerHTML += `<th>${header}</th>`;
-        }
+        headers.forEach((header, index) => {
+          let className = '';
+          if (index === sortColumn) {
+            className = sortDirection === 'asc' ? 'sort-asc' : 'sort-desc';
+          }
+          headerHTML += `<th class="${className}" data-column-index="${index}">${header}</th>`;
+        });
         headerHTML += "</tr>";
         tableHead.innerHTML = headerHTML;
 
-        // Create the table body rows
+        // Add click listeners to the new headers
+        document.querySelectorAll("#my-table thead th").forEach(th => {
+          th.addEventListener("click", handleHeaderClick);
+        });
+        
+        // Build the body
         let bodyHTML = "";
-        for (const row of data) {
-          // Skips any empty rows Papa Parse might find at the end of the file
+        for (const row of tableData) {
           if (Object.values(row).every(val => val === "")) continue;
-
           bodyHTML += "<tr>";
           for (const header of headers) {
             bodyHTML += `<td>${row[header]}</td>`;
@@ -71,6 +99,42 @@
         }
         tableBody.innerHTML = bodyHTML;
       }
+    }
+
+    // --- NEW: This function handles the sorting logic ---
+    function handleHeaderClick(event) {
+      const clickedColumnIndex = parseInt(event.target.dataset.columnIndex);
+
+      // If clicking the same column, reverse the direction; otherwise, reset to ascending
+      if (clickedColumnIndex === sortColumn) {
+        sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
+      } else {
+        sortColumn = clickedColumnIndex;
+        sortDirection = 'asc';
+      }
+
+      // Sort the data
+      const headerKey = Object.keys(tableData[0])[sortColumn];
+      tableData.sort((a, b) => {
+        const valA = a[headerKey];
+        const valB = b[headerKey];
+        
+        if (valA < valB) {
+          return -1;
+        }
+        if (valA > valB) {
+          return 1;
+        }
+        return 0;
+      });
+      
+      // Reverse the array if sorting direction is descending
+      if (sortDirection === 'desc') {
+        tableData.reverse();
+      }
+      
+      // Rebuild the entire table with the sorted data
+      buildTable();
     }
   </script>
 
