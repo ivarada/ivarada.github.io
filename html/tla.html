@@ -8,24 +8,9 @@
     body { font-family: sans-serif; }
     table { width: 100%; border-collapse: collapse; }
     th, td { padding: 8px 12px; border: 1px solid #ccc; text-align: left; }
-    
-    /* Style for the sortable header */
-    thead th { 
-      background-color: #f2f2f2;
-      cursor: pointer;
-      position: relative;
-    }
+    thead th { background-color: #f2f2f2; cursor: pointer; position: relative; }
     thead th:hover { background-color: #e6e6e6; }
-
-    /* Arrows for sorting direction (using CSS content) */
-    thead th::after {
-      content: '';
-      position: absolute;
-      right: 8px;
-      top: 50%;
-      transform: translateY(-50%);
-      opacity: 0.5;
-    }
+    thead th::after { content: ''; position: absolute; right: 8px; top: 50%; transform: translateY(-50%); opacity: 0.5; }
     thead th.sort-asc::after { content: ' ▲'; }
     thead th.sort-desc::after { content: ' ▼'; }
   </style>
@@ -42,35 +27,40 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
   
   <script>
-    const csvUrl = 'https://ivarada.github.io/html/tla.txt';
+    // --- Using .txt for reliability on GitHub Pages ---
+    const dataUrl = 'https://ivarada.github.io/html/tla.txt';
     
-    // --- NEW: Global variables to store data and sorting state ---
+    // --- Global variables ---
     let tableData = [];
-    let sortColumn = -1; // -1 means no column is sorted initially
+    let headers = []; // <-- NEW: Store headers permanently
+    let sortColumn = -1;
     let sortDirection = 'asc';
 
-    Papa.parse(csvUrl, {
+    Papa.parse(dataUrl, {
       download: true,
       header: true,
+      skipEmptyLines: true, // <-- Good practice
       complete: function(results) {
-        tableData = results.data; // Store the data globally
+        tableData = results.data;
+        // --- FIX: Get headers only ONCE and store them ---
+        if (tableData.length > 0) {
+          headers = Object.keys(tableData[0]);
+        }
         console.log("Parsed Data:", tableData);
-        buildTable(); // Initial table build
+        buildTable(); 
       },
       error: function(err) {
-        console.error("Error parsing CSV:", err);
+        console.error("Error parsing data:", err);
         document.querySelector("tbody").innerHTML = `<tr><td colspan="100%">Error loading data.</td></tr>`;
       }
     });
 
-    // --- MODIFIED: This function now builds and rebuilds the table ---
     function buildTable() {
       const tableHead = document.querySelector("#my-table thead");
       const tableBody = document.querySelector("#my-table tbody");
       
       if (tableData.length > 0) {
-        // Build the header
-        const headers = Object.keys(tableData[0]);
+        // Build the header using the stored 'headers' variable
         let headerHTML = "<tr>";
         headers.forEach((header, index) => {
           let className = '';
@@ -82,18 +72,18 @@
         headerHTML += "</tr>";
         tableHead.innerHTML = headerHTML;
 
-        // Add click listeners to the new headers
+        // Add click listeners to headers
         document.querySelectorAll("#my-table thead th").forEach(th => {
           th.addEventListener("click", handleHeaderClick);
         });
         
-        // Build the body
+        // Build the body using the stored 'headers' variable
         let bodyHTML = "";
         for (const row of tableData) {
-          if (Object.values(row).every(val => val === "")) continue;
           bodyHTML += "<tr>";
           for (const header of headers) {
-            bodyHTML += `<td>${row[header]}</td>`;
+            // Use empty string for any missing values to prevent errors
+            bodyHTML += `<td>${row[header] || ""}</td>`; 
           }
           bodyHTML += "</tr>";
         }
@@ -101,11 +91,9 @@
       }
     }
 
-    // --- NEW: This function handles the sorting logic ---
     function handleHeaderClick(event) {
       const clickedColumnIndex = parseInt(event.target.dataset.columnIndex);
 
-      // If clicking the same column, reverse the direction; otherwise, reset to ascending
       if (clickedColumnIndex === sortColumn) {
         sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
       } else {
@@ -113,27 +101,20 @@
         sortDirection = 'asc';
       }
 
-      // Sort the data
-      const headerKey = Object.keys(tableData[0])[sortColumn];
+      const headerKey = headers[sortColumn];
       tableData.sort((a, b) => {
-        const valA = a[headerKey];
-        const valB = b[headerKey];
-        
-        if (valA < valB) {
-          return -1;
-        }
-        if (valA > valB) {
-          return 1;
-        }
+        const valA = a[headerKey] || ''; // Use empty string for comparison if value is missing
+        const valB = b[headerKey] || '';
+
+        if (valA < valB) return -1;
+        if (valA > valB) return 1;
         return 0;
       });
       
-      // Reverse the array if sorting direction is descending
       if (sortDirection === 'desc') {
         tableData.reverse();
       }
       
-      // Rebuild the entire table with the sorted data
       buildTable();
     }
   </script>
