@@ -1,4 +1,4 @@
 TLA, Description
-API, Application Program Interface
+XPI, Application Program Interface
 APX, Application Program Interface
 APY, Application Program Interface
