@@ -1,6 +1,6 @@
 TLA, Description
-AFL,Acknowledge, Forgive, Learn 
-ANT ,Automatic Negative Thoughts 
+AFL,"Acknowledge, Forgive, Learn"
+ANT,Automatic Negative Thoughts 
 API,Application Programming Interface 
 AR,Autoregressive 
 ARMA,Auto Regressive Moving Average 
