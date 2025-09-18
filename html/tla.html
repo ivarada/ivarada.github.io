@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+</head>
+<body>
+
+  <h2>My Sortable & Downloadable List</h2>
+  <div id="wrapper"></div>
+
+  <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+  
+  <script>
+    // Point Grid.js to your data file
+    new gridjs.Grid({
+      sort: true,         // Enable sorting
+      search: true,       // Enable searching
+      pagination: true,   // Enable pagination
+      from: 'tla.csv'    // Your data file in the same repository
+    }).render(document.getElementById("wrapper"));
+  </script>
+
+</body>
+</html>
