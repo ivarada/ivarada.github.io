@@ -1,4 +1,5 @@
 TLA, Description
+ARC,American Red Cross
 AFL,"Acknowledge, Forgive, Learn"
 ANT,Automatic Negative Thoughts 
 API,Application Programming Interface 
