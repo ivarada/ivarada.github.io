@@ -5,6 +5,7 @@ layout: default
 
   <style>
     /* --- Styles for Centering --- */
+    /*
     body {
       font-family: sans-serif;
       margin: 0;
@@ -14,6 +15,7 @@ layout: default
       min-height: 100vh;
       background-color: #f7f7f7;
     }
+    */
 
     .container {
       padding: 20px;
