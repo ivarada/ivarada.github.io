@@ -4,7 +4,7 @@ name: Update PDF Listing
 on:
   push:
     paths:
-      - "pdfs/**"  # Trigger only if files in the "pdfs" directory are modified
+      - "medium/pdf/**"  # Trigger only if files in the "pdfs" directory are modified
   workflow_dispatch:  # Allow manual triggering of the workflow
 
 jobs:
@@ -28,7 +28,7 @@ jobs:
           import os
 
           # Directory containing PDFs
-          pdf_dir = "pdfs"
+          pdf_dir = "medium/pdf/"
           output_file = "index.md"
 
           # Generate Markdown content
