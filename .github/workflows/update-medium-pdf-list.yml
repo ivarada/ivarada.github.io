@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the repository
+      # Step 1: Check out the repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
@@ -24,23 +24,17 @@ jobs:
       # Step 3: Generate the Markdown file
       - name: Generate PDF Listing
         run: |
-        python -c "
+          python -c "
           import os
-
-          # Directory containing PDFs
-          pdf_dir = "medium/pdf/"
-          output_file = "index.md"
-
-          # Generate Markdown content
-          markdown_content = "# PDF Listing\n\nHere are the available PDFs:\n\n"
+          pdf_dir = 'medium/pdf/'
+          output_file = 'index.md'
+          markdown_content = '# PDF Listing\\n\\nHere are the available PDFs:\\n\\n'
           for pdf in sorted(os.listdir(pdf_dir)):
-              if pdf.endswith(".pdf"):
-                  markdown_content += f"- [{pdf}]({pdf_dir}/{pdf})\n"
-
-          # Write to index.md
-          with open(output_file, "w") as f:
+              if pdf.endswith('.pdf'):
+                  markdown_content += f'- [{pdf}]({pdf_dir}/{pdf})\\n'
+          with open(output_file, 'w') as f:
               f.write(markdown_content)
-        "
+          "
 
       # Step 4: Commit and push changes
       - name: Commit and push changes
