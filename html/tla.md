@@ -3,8 +3,6 @@ title: TLA
 layout: default
 ---
 
-# TLA - Thre
-
   <style>
     /* --- Styles for Centering --- */
     body {
