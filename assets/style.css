@@ -22,5 +22,6 @@ nav a{
 }
 header.post-header{
   background: #D3D3D3;
+  padding-top: 1px;
+  padding-bottom: 1px;
 }
-
