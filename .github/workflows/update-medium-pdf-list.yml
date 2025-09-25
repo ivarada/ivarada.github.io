@@ -1,8 +1,6 @@
 name: Update Medium PDF Listing
 
 on:
-  workflow_dispatch:
-on:
   push:
     paths:
       - "medium/pdf/**"  # Trigger only if files in the "pdfs" directory are modified
