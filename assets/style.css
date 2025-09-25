@@ -11,3 +11,6 @@ header, footer {
 main {
   margin-top: 2em;
 }
+ul li {
+  padding: 10px;
+}
