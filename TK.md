@@ -3,7 +3,7 @@ title: TK in Writing and Drafting - Complete Guide
 layout: default
 ---
 
-## What is "TK"?
+# What is "TK"?
 
 **TK** is a placeholder abbreviation used by writers, journalists, and editors that stands for **"To Come"** or **"To Kum"** (an old-fashioned spelling to avoid confusion with other abbreviations).
 
