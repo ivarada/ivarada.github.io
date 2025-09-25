@@ -18,4 +18,5 @@ ul li {
 nav a{
   padding: 10px;
   font-size: x-large;
+  border: 1px;
 }
