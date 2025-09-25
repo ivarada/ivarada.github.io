@@ -17,7 +17,7 @@ Here are the available PDFs:
 - [2025-07-16 - medium.com - Motor Configurations in Electric Vehicles 1 vs 2 vs 4 Motors.pdf](2025-07-16 - medium.com - Motor Configurations in Electric Vehicles 1 vs 2 vs 4 Motors.pdf)
 - [2025-07-16 - medium.com - Understanding Tokens and Natural Language Processing NLP.pdf](2025-07-16 - medium.com - Understanding Tokens and Natural Language Processing NLP.pdf)
 - [2025-07-17 - medium.com - MCP and APIs Partners in the AI-Driven Future Not Competitors.pdf](2025-07-17 - medium.com - MCP and APIs Partners in the AI-Driven Future Not Competitors.pdf)
-- [2025-07-20 - medium.com - Whats All the Buzz About Batteries.pdf](2025-07-20 - medium.com - Whats All the Buzz About Batteries.pdf)
+- [2025-07-21 - medium.com - Whats All the Buzz About Batteries.pdf](2025-07-21 - medium.com - Whats All the Buzz About Batteries.pdf)
 - [2025-07-26 - medium.com - The After-Meeting Phenomenon Why We Save Our Best Ideas for the Hallway.pdf](2025-07-26 - medium.com - The After-Meeting Phenomenon Why We Save Our Best Ideas for the Hallway.pdf)
 - [2025-07-26 - medium.com - The Digital After-Meeting How Remote Work Amplified Our Silent Voices.pdf](2025-07-26 - medium.com - The Digital After-Meeting How Remote Work Amplified Our Silent Voices.pdf)
 - [2025-07-29 - medium.com - AI Integration Glossary Essential Terms for Understanding Modern AI Implementation.pdf](2025-07-29 - medium.com - AI Integration Glossary Essential Terms for Understanding Modern AI Implementation.pdf)
