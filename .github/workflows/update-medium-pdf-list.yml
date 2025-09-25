@@ -24,6 +24,7 @@ jobs:
       # Step 3: Generate the Markdown file
       - name: Generate PDF Listing
         run: |
+        python -c "
           import os
 
           # Directory containing PDFs
@@ -39,6 +40,7 @@ jobs:
           # Write to index.md
           with open(output_file, "w") as f:
               f.write(markdown_content)
+        "
 
       # Step 4: Commit and push changes
       - name: Commit and push changes
