@@ -9,4 +9,5 @@ title: Home
 - [AI Integration - Glossary](Glossary-AI-Integration.html)
 - [Medium Stories](https://medium.com/@varada)
 - [Other Websites](websites.html)
+- [The Five Stages of AI Integration - From Gold Rush to Autonomous Agents](AI-Integration.md)
 - [TLA - Three Letter Acronym List](html/tla.html)
