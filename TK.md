@@ -1,5 +1,6 @@
 ---
 title: TK in Writing and Drafting - Complete Guide
+layout: default
 ---
 
 ## What is "TK"?
