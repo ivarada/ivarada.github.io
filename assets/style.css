@@ -20,3 +20,6 @@ nav a{
   font-size: x-large;
   border: 1px;
 }
+h1.post-title{
+  font-size: 1.5em;
+}
