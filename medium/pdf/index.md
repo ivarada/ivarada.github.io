@@ -7,7 +7,6 @@ title: PDF Listing
 
 Here are the available PDFs:
 
-- [07012025 - medium.com-The Terminal Revolution Why Warp is the Future of Command Line Computing.pdf](07012025 - medium.com-The Terminal Revolution Why Warp is the Future of Command Line Computing.pdf)
 - [07062025 - ivarada.substack.com-The Terminal Revolution Why Warp may be the Future of Command Line Computing.pdf](07062025 - ivarada.substack.com-The Terminal Revolution Why Warp may be the Future of Command Line Computing.pdf)
 - [07162025 - medium.com-Google AI Studio vs Gemini App Which Is Right for Your AI Journey.pdf](07162025 - medium.com-Google AI Studio vs Gemini App Which Is Right for Your AI Journey.pdf)
 - [07162025 - medium.com-Motor Configurations in Electric Vehicles 1 vs 2 vs 4 Motors.pdf](07162025 - medium.com-Motor Configurations in Electric Vehicles 1 vs 2 vs 4 Motors.pdf)
@@ -21,3 +20,4 @@ Here are the available PDFs:
 - [07262025 - medium.com-The After-Meeting Phenomenon Why We Save Our Best Ideas for the Hallway.pdf](07262025 - medium.com-The After-Meeting Phenomenon Why We Save Our Best Ideas for the Hallway.pdf)
 - [07262025 - medium.com-The Digital After-Meeting How Remote Work Amplified Our Silent Voices.pdf](07262025 - medium.com-The Digital After-Meeting How Remote Work Amplified Our Silent Voices.pdf)
 - [07292025 - medium.com-AI Integration Glossary Essential Terms for Understanding Modern AI Implementation.pdf](07292025 - medium.com-AI Integration Glossary Essential Terms for Understanding Modern AI Implementation.pdf)
+- [20250701 - medium.com - The Terminal Revol ution Why Warp is the Future of Command Line Computing.pdf](20250701 - medium.com - The Terminal Revol ution Why Warp is the Future of Command Line Computing.pdf)
