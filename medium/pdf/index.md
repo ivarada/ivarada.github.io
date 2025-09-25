@@ -19,5 +19,5 @@ Here are the available PDFs:
 - [07252025 - medium.com-Understanding AI Parameters Tokens and What You Can Control.pdf](07252025 - medium.com-Understanding AI Parameters Tokens and What You Can Control.pdf)
 - [07262025 - medium.com-The After-Meeting Phenomenon Why We Save Our Best Ideas for the Hallway.pdf](07262025 - medium.com-The After-Meeting Phenomenon Why We Save Our Best Ideas for the Hallway.pdf)
 - [07262025 - medium.com-The Digital After-Meeting How Remote Work Amplified Our Silent Voices.pdf](07262025 - medium.com-The Digital After-Meeting How Remote Work Amplified Our Silent Voices.pdf)
+- [2025-07-29 - medium.com - AI Integration Glossary Essential Terms for Understanding Modern AI Implementation.pdf](2025-07-29 - medium.com - AI Integration Glossary Essential Terms for Understanding Modern AI Implementation.pdf)
 - [20250701 - medium.com - The Terminal Revol ution Why Warp is the Future of Command Line Computing.pdf](20250701 - medium.com - The Terminal Revol ution Why Warp is the Future of Command Line Computing.pdf)
-- [20250729 - medium.com - AI Integration Glossary Essential Terms for Understanding Modern AI Implementation.pdf](20250729 - medium.com - AI Integration Glossary Essential Terms for Understanding Modern AI Implementation.pdf)
