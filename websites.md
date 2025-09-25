@@ -1,5 +1,6 @@
 ---
 title: Websites
+layout: default
 ---
 
 ## DZone
