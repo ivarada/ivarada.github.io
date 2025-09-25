@@ -20,6 +20,12 @@ nav a{
   font-size: x-large;
   border: 1px;
 }
+header.post-header{
+  background: #eff;
+  padding: 1em;
+  border-radius: 4px;  
+}
+/* 
 h1.post-title{
   font-size: 1.5em;
   display: block;
@@ -32,3 +38,4 @@ h1.post-title{
   padding: 10px;
   background: #ffaaaa;
 }
+*/
