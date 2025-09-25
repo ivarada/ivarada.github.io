@@ -1,6 +1,7 @@
 name: Update Medium PDF Listing
-name: Update PDF Listing
 
+on:
+  workflow_dispatch:
 on:
   push:
     paths:
