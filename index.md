@@ -3,7 +3,7 @@ layout: default
 title: Home
 ---
 
-# Welcome to My GitHub Page
+# Home Page
 
 - [Glossary - AI Integration - Essential Terms for Understanding Modern AI Implementation](Glossary-AI-Integration.html)
 - [Medium Stories](https://medium.com/@varada)
