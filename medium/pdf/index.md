@@ -1,3 +1,8 @@
+---
+layout: default
+title: PDF Listing
+---
+
 # PDF Listing
 
 Here are the available PDFs:
