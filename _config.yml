@@ -7,13 +7,17 @@ title: Varada's GitHub
 # Use one of the official Jekyll themes
 theme: minima
 
-header_pages:
- - index.md
- - 2025.md
+# header_pages:
+# - index.md
+# - 2025.md
 
-# plugins:
+plugins:
+  - jekyll-feed
 #  - jekyll-sitemap
-
+collections:
+  pages:
+    output: true
+  
 # Exclude these pages from the sitemap
 # exclude:
 #  - "/some_directory/"
