@@ -1,1 +1,54 @@
 name: Update Medium PDF Listing
+name: Update PDF Listing
+
+on:
+  push:
+    paths:
+      - "pdfs/**"  # Trigger only if files in the "pdfs" directory are modified
+  workflow_dispatch:  # Allow manual triggering of the workflow
+
+jobs:
+  update-pdf-list:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Python (for the script that generates the Markdown file)
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      # Step 3: Generate the Markdown file
+      - name: Generate PDF Listing
+        run: |
+          import os
+
+          # Directory containing PDFs
+          pdf_dir = "pdfs"
+          output_file = "index.md"
+
+          # Generate Markdown content
+          markdown_content = "# PDF Listing\n\nHere are the available PDFs:\n\n"
+          for pdf in sorted(os.listdir(pdf_dir)):
+              if pdf.endswith(".pdf"):
+                  markdown_content += f"- [{pdf}]({pdf_dir}/{pdf})\n"
+
+          # Write to index.md
+          with open(output_file, "w") as f:
+              f.write(markdown_content)
+
+      # Step 4: Commit and push changes
+      - name: Commit and push changes
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.md
+          git commit -m "Update PDF Listing"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
