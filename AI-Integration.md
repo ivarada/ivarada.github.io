@@ -1,5 +1,6 @@
 ---
 title: The Five Stages of AI Integration - From Gold Rush to Autonomous Agents
+layout: default
 ---
 
 _Whether you're new to AI or deep in implementation, here's how I'm mapping the stages of AI integration evolution._
