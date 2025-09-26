@@ -25,37 +25,37 @@ jobs:
       - name: Generate PDF Listing
         run: |
           python -c "
-            import os
-            from collections import defaultdict
-            
-            pdf_dir = 'medium/pdf'
-            output_file = 'medium/pdf/index.md'
-            markdown_content = (
-                '---\nlayout: default\ntitle: PDF Listing\n---\n\n'
-                '# PDF Listing\n\nHere are the available PDFs:\n\n'
-            )
-            
-            pdfs_by_year_month = defaultdict(lambda: defaultdict(list))
-            
-            for pdf in sorted(os.listdir(pdf_dir), reverse=True):
-                if pdf.endswith('.pdf'):
-                    try:
-                        date_part = pdf.split(' - ')[0]
-                        year, month, _ = date_part.split('-')
-                        pdfs_by_year_month[year][month].append(pdf)
-                    except Exception:
-                        continue  # Skip files not matching the format
-            
-            for year in sorted(pdfs_by_year_month.keys(), reverse=True):
-                markdown_content += f'## {year}\n'
-                for month in sorted(pdfs_by_year_month[year].keys(), reverse=True):
-                    markdown_content += f'### {month}\n'
-                    for pdf in sorted(pdfs_by_year_month[year][month], reverse=True):
-                        markdown_content += f'- [{pdf}]({pdf})\n'
-                    markdown_content += '\n'
-            
-            with open(output_file, 'w') as f:
-                f.write(markdown_content)
+          import os
+          from collections import defaultdict
+          
+          pdf_dir = 'medium/pdf'
+          output_file = 'medium/pdf/index.md'
+          markdown_content = (
+              '---\nlayout: default\ntitle: PDF Listing\n---\n\n'
+              '# PDF Listing\n\nHere are the available PDFs:\n\n'
+          )
+          
+          pdfs_by_year_month = defaultdict(lambda: defaultdict(list))
+          
+          for pdf in sorted(os.listdir(pdf_dir), reverse=True):
+              if pdf.endswith('.pdf'):
+                  try:
+                      date_part = pdf.split(' - ')[0]
+                      year, month, _ = date_part.split('-')
+                      pdfs_by_year_month[year][month].append(pdf)
+                  except Exception:
+                      continue  # Skip files not matching the format
+          
+          for year in sorted(pdfs_by_year_month.keys(), reverse=True):
+              markdown_content += f'## {year}\n'
+              for month in sorted(pdfs_by_year_month[year].keys(), reverse=True):
+                  markdown_content += f'### {month}\n'
+                  for pdf in sorted(pdfs_by_year_month[year][month], reverse=True):
+                      markdown_content += f'- [{pdf}]({pdf})\n'
+                  markdown_content += '\n'
+          
+          with open(output_file, 'w') as f:
+              f.write(markdown_content)
           "
 
       # Step 4: Commit and push changes
