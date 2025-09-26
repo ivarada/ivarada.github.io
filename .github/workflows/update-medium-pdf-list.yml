@@ -35,6 +35,13 @@ jobs:
               '# PDF Listing\n\nHere are the available PDFs:\n\n'
           )
           
+          # Month mapping: '01' -> 'January', ..., '12' -> 'December'
+          MONTH_NAMES = {
+              '01': 'January', '02': 'February', '03': 'March', '04': 'April',
+              '05': 'May', '06': 'June', '07': 'July', '08': 'August',
+              '09': 'September', '10': 'October', '11': 'November', '12': 'December'
+          }
+          
           pdfs_by_year_month = defaultdict(lambda: defaultdict(list))
           
           for pdf in sorted(os.listdir(pdf_dir), reverse=True):
@@ -49,7 +56,8 @@ jobs:
           for year in sorted(pdfs_by_year_month.keys(), reverse=True):
               markdown_content += f'## {year}\n'
               for month in sorted(pdfs_by_year_month[year].keys(), reverse=True):
-                  markdown_content += f'### {month}\n'
+                  month_name = MONTH_NAMES.get(month, '')
+                  markdown_content += f'### {month} - {month_name}\n'
                   for pdf in sorted(pdfs_by_year_month[year][month], reverse=True):
                       markdown_content += f'- [{pdf}]({pdf})\n'
                   markdown_content += '\n'
