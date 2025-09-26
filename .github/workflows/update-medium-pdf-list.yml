@@ -29,7 +29,7 @@ jobs:
           pdf_dir = 'medium/pdf'
           output_file = 'medium/pdf/index.md'
           markdown_content = '---\\nlayout: default\\ntitle: PDF Listing\\n---\\n\\n# PDF Listing\\n\\nHere are the available PDFs:\\n\\n'
-          for pdf in sorted(os.listdir(pdf_dir)):
+          for pdf in sorted(os.listdir(pdf_dir), reverse=True):
               if pdf.endswith('.pdf'):
                   markdown_content += f'- [{pdf}]({pdf})\\n'
           with open(output_file, 'w') as f:
