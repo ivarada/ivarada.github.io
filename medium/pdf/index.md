@@ -7,6 +7,8 @@ title: PDF Listing
 
 Here are the available PDFs:
 
+## 2025
+### 09
 - [2025-09-21 - medium-com - The Speed Paradox Why Knowing Every Crack in the Pavement Makes You Run Faster.pdf](2025-09-21 - medium-com - The Speed Paradox Why Knowing Every Crack in the Pavement Makes You Run Faster.pdf)
 - [2025-09-14 - medium-com - Why Effort Has No Shortcuts.pdf](2025-09-14 - medium-com - Why Effort Has No Shortcuts.pdf)
 - [2025-09-09 - medium-com - Gemini CLI vs Claude AI Desktop A Guide to Choosing Your AI Coding Assistant.pdf](2025-09-09 - medium-com - Gemini CLI vs Claude AI Desktop A Guide to Choosing Your AI Coding Assistant.pdf)
@@ -14,6 +16,8 @@ Here are the available PDFs:
 - [2025-09-05 - medium-com - How AI Chat Interactions Train Models My Current Understanding.pdf](2025-09-05 - medium-com - How AI Chat Interactions Train Models My Current Understanding.pdf)
 - [2025-09-03 - medium-com - Beyond Automation AI That Actually Thinks Ahead.pdf](2025-09-03 - medium-com - Beyond Automation AI That Actually Thinks Ahead.pdf)
 - [2025-09-01 - medium-com - Between the Rush A Letter to Stillness.pdf](2025-09-01 - medium-com - Between the Rush A Letter to Stillness.pdf)
+
+### 07
 - [2025-07-29 - medium.com - AI Integration Glossary Essential Terms for Understanding Modern AI Implementation.pdf](2025-07-29 - medium.com - AI Integration Glossary Essential Terms for Understanding Modern AI Implementation.pdf)
 - [2025-07-26 - medium.com - The Digital After-Meeting How Remote Work Amplified Our Silent Voices.pdf](2025-07-26 - medium.com - The Digital After-Meeting How Remote Work Amplified Our Silent Voices.pdf)
 - [2025-07-26 - medium.com - The After-Meeting Phenomenon Why We Save Our Best Ideas for the Hallway.pdf](2025-07-26 - medium.com - The After-Meeting Phenomenon Why We Save Our Best Ideas for the Hallway.pdf)
@@ -28,3 +32,4 @@ Here are the available PDFs:
 - [2025-07-16 - medium.com - Google AI Studio vs Gemini App Which Is Right for Your AI Journey.pdf](2025-07-16 - medium.com - Google AI Studio vs Gemini App Which Is Right for Your AI Journey.pdf)
 - [2025-07-06 - substack.com - The Terminal Revolution Why Warp may be the Future of Command Line Computing.pdf](2025-07-06 - substack.com - The Terminal Revolution Why Warp may be the Future of Command Line Computing.pdf)
 - [2025-07-01 - medium.com - The Terminal Revol ution Why Warp is the Future of Command Line Computing.pdf](2025-07-01 - medium.com - The Terminal Revol ution Why Warp is the Future of Command Line Computing.pdf)
+
