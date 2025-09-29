@@ -18,12 +18,14 @@ jobs:
       - name: Find all .md files and update md.txt
         run: |
           mkdir -p _config
-          find . -type f -name "*.md" | sort > _config/md-files-list.txt
+          echo "MD HTML File List" > _config/md-html-files-list.txt
+          find . -type f -name "*.md" | sort > _config/md-html-files-list.txt
+          find . -type f -name "*.html" | sort > _config/md-html-files-list.txt
 
       - name: Commit and push md.txt
         run: |
           git config --local user.name "ivarada"
           git config --local user.email "varada@"
-          git add _config/md-files-list.txt
+          git add _config/md-html-files-list.txt
           git commit -m "Update md.txt with list of all Markdown files" || echo "No changes to commit"
           git push
