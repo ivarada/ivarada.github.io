@@ -30,7 +30,7 @@ Summary
 * **Focus on Human Stories and Ideas:** The platform emphasizes sharing personal narratives, insights, and thought-provoking ideas across various topics.
 * **Community-Driven Content:** It provides an accessible space for a wide range of voices, from amateur writers to established professionals, to contribute to a vast collection of articles.
 
-## Runrepat
+## Runrepeat
 Website is [https://runrepeat.com/](https://runrepeat.com/)
 
 Summary
