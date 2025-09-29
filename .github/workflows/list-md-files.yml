@@ -17,13 +17,13 @@ jobs:
 
       - name: Find all .md files and update md.txt
         run: |
-          mkdir -p .github/workflow
-          find . -type f -name "*.md" | sort > .github/workflow/md.txt
+          mkdir -p .github/workflows
+          find . -type f -name "*.md" | sort > .github/workflows/md.txt
 
       - name: Commit and push md.txt
         run: |
           git config --local user.name "ivarada"
           git config --local user.email "varada@"
-          git add .github/workflow/md.txt
+          git add .github/workflows/md.txt
           git commit -m "Update md.txt with list of all Markdown files" || echo "No changes to commit"
           git push
