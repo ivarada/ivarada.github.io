@@ -1,0 +1,15 @@
+./LICENSE.md
+./README.md
+./_pages/about.md
+./ai-integration.md
+./calendar-q-2025.md
+./calendar-q-2026.md
+./calendar-y-2025.md
+./calendar-y-2026.md
+./glossary-ai-integration.md
+./html/tla.md
+./index.md
+./md/readme.md
+./medium/pdf/index.md
+./tk.md
+./websites.md
