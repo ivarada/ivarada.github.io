@@ -18,9 +18,13 @@ jobs:
       - name: Find all .md files and update md.txt
         run: |
           mkdir -p _config
+          echo "MD HTML File List -- START" > _config/md-html-files-list.txt
           echo "MD HTML File List" > _config/md-html-files-list.txt
-          find . -type f -name "*.md" | sort > _config/md-html-files-list.txt
-          find . -type f -name "*.html" | sort > _config/md-html-files-list.txt
+          echo "---MD---" > _config/md-html-files-list.txt
+          find . -type f -name "*.md" | sort >> _config/md-html-files-list.txt
+          echo "---HTML---" > _config/md-html-files-list.txt
+          find . -type f -name "*.html" | sort >> _config/md-html-files-list.txt
+          echo "MD HTML File List -- END" >> _config/md-html-files-list.txt
 
       - name: Commit and push md.txt
         run: |
