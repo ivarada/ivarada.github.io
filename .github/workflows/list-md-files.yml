@@ -1,0 +1,28 @@
+name: List Markdown Files
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: "0 22 * * *" # Runs daily at 11pm UTC
+
+jobs:
+  list-md-files:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Find .md files
+        id: find_md
+        run: |
+          find . -type f -name "*.md" | sort > md_files.txt
+
+      - name: Show list in summary
+        run: |
+          echo "## List of Markdown files in repo" > $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+          cat md_files.txt >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
