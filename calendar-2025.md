@@ -59,3 +59,8 @@
 | 52 |         |    22 |    23 |    24 |    25 |    26 |    27 |    28 |
 |    |         |    29 |    30 |    31 |       |       |       |       |
 |    |         | **M** | **T** | **W** | **T** | **F** | **S** | **S** |
+
+
+Sources:
+- https://jorgesanz.net/posts/2024-11-13-markdown-calendar-for-2025/
+- https://ellanew.com/2024/11/13/markdown-calendars-2025
