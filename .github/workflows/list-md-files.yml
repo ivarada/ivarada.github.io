@@ -17,8 +17,8 @@ jobs:
 
       - name: Find all .md files and update md.txt
         run: |
-          mkdir -p .github/workflows
-          find . -type f -name "*.md" | sort > .github/workflows/md.txt
+          mkdir -p _config
+          find . -type f -name "*.md" | sort > _config/md.txt
 
       - name: Commit and push md.txt
         run: |
