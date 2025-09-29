@@ -6,7 +6,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: "0 22 * * *" # Runs daily at 11pm UTC
+    - cron: "0 23 * * *" # Runs daily at 11pm UTC
 
 jobs:
   list-md-files:
@@ -15,14 +15,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Find .md files
-        id: find_md
+      - name: Find all .md files and update md.txt
         run: |
-          find . -type f -name "*.md" | sort > md_files.txt
+          mkdir -p .github/workflow
+          find . -type f -name "*.md" | sort > .github/workflow/md.txt
 
-      - name: Show list in summary
+      - name: Commit and push md.txt
         run: |
-          echo "## List of Markdown files in repo" > $GITHUB_STEP_SUMMARY
-          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
-          cat md_files.txt >> $GITHUB_STEP_SUMMARY
-          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+          git config --local user.name "ivarada"
+          git config --local user.email "varada@"
+          git add .github/workflow/md.txt
+          git commit -m "Update md.txt with list of all Markdown files" || echo "No changes to commit"
+          git push
