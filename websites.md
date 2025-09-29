@@ -13,6 +13,15 @@ Summary
 * **Focus on Key Tech Domains:** The site covers significant technology zones such as Culture and Methodologies (Agile, Career Development), Data Engineering (AI/ML, Big Data, Databases), Software Design and Architecture (Cloud, Microservices, Security), Coding (Frameworks, Languages, Tools), and Testing, Deployment, and Maintenance (DevOps, CI/CD, Monitoring).
 * **Community-Driven Content:** DZone encourages contributions from its community, allowing developers to share their expertise through article submissions and participate in community research for Trend Reports.
 
+## Infrastructure Report Card 
+Website is [http://infrastructurereportcard.org/](http://infrastructurereportcard.org/)
+
+Summary
+* The website is the home of the **American Society of Civil Engineers’ (ASCE) “Report Card for America’s Infrastructure,”** which publishes a quadrennial evaluation of the condition and performance of U.S. infrastructure (using A–F grades).
+* It highlights the degradation and under-investment in American infrastructure systems, quantifies funding gaps (in the trillions), and breaks down grades across categories like roads, bridges, energy, water, and — newly added — broadband.
+* It also offers recommendations and solutions to close the investment gap, promote resilience, encourage innovation, and sustain funding to improve infrastructure over time.
+
+
 ## Gearpatrol
 
 Website is [https://www.gearpatrol.com/](https://www.gearpatrol.com/)
