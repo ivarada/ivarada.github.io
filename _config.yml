@@ -22,6 +22,7 @@ collections:
 # exclude:
 #  - "/some_directory/"
 #  - "some_page.html"
+  - "/_config/"
 
 # If you want to use a custom sitemap, you can specify its path
 # sitemap: /custom_sitemap.xml
