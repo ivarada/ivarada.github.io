@@ -6,7 +6,7 @@ layout: default
 ## 2026 Template by half year
 
 <pre>
-  <code>>
+  <code>
 ## 2026 Yearly Half Calendar
 
 ### Q1 & Q2
