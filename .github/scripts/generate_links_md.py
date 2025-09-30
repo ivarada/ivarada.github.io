@@ -3,6 +3,14 @@ import pandas as pd
 # Read the CSV from _config/
 df = pd.read_csv('_config/links.csv')
 
+# Strip whitespace from column names
+df.columns = df.columns.str.strip()
+
+# Check if required columns exist
+required_cols = {'Category', 'Name', 'Link'}
+if not required_cols.issubset(df.columns):
+    raise ValueError(f"CSV file must contain columns: {required_cols}. Found: {df.columns.tolist()}")
+
 # Sort by Category, then Name
 df = df.sort_values(['Category', 'Name'])
 
