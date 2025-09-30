@@ -1,3 +1,9 @@
+---
+title: 2026 Calendar
+layout: default
+---
+
+<code><pre>
 ## 2026
 
 |  W |    Q1   |     M |     T |     W |     T |     F |     S |     S |
@@ -59,6 +65,8 @@
 | 52 |         |    21 |    22 |    23 |    24 |    25 |    26 |    27 |  
 |    |         |    28 |    29 |    30 |    31 |       |       |       |
 |    |         | **M** | **T** | **W** | **T** | **F** | **S** | **S** |
+
+</pre></code>
 
 Sources:
 - https://jorgesanz.net/posts/2024-11-13-markdown-calendar-for-2025/
