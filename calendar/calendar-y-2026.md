@@ -1,9 +1,9 @@
 ---
-title: 2026 Calendar
+title: 2026 Template
 layout: default
 ---
 
-## 2026 Markdown Calendar Template
+## 2026 Template
 
 <pre><code>
 ## 2026
