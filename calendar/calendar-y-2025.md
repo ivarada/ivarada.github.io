@@ -1,3 +1,8 @@
+---
+title: 2025 Markdown Template
+layout: default
+---
+<pre><code>
 ## 2025
 
 |  W |    Q1   |     M |     T |     W |     T |     F |     S |     S |
@@ -60,6 +65,7 @@
 |    |         |    29 |    30 |    31 |       |       |       |       |
 |    |         | **M** | **T** | **W** | **T** | **F** | **S** | **S** |
 
+</code></pre>
 
 Sources:
 - https://jorgesanz.net/posts/2024-11-13-markdown-calendar-for-2025/
