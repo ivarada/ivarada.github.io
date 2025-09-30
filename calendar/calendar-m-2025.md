@@ -1,5 +1,5 @@
 ---
-title: 2025 by month
+title: 2025 Template by month
 layout: default
 ---
 
