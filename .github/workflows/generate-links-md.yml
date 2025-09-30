@@ -1,0 +1,34 @@
+name: Generate links.md from links.csv
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - _config/links.csv
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      
+      - name: Install dependencies
+        run: pip install pandas
+
+      - name: Generate links.md from links.csv
+        run: python .github/scripts/generate_links_md.py
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git add _config/links.md
+          git diff --cached --quiet || git commit -m "Auto-generate _config/links.md from _config/links.csv"
+          git push
