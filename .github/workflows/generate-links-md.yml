@@ -19,17 +19,17 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
-      
+
       - name: Install dependencies
         run: pip install pandas
 
-      - name: Generate links.md from links.csv
+      - name: Generate links.md and update index.md from links.csv
         run: python .github/scripts/generate_links_md.py
 
       - name: Commit and push changes
         run: |
           git config --local user.name "ivarada"
           git config --local user.email "varada@"
-          git add _config/links.md
-          git diff --cached --quiet || git commit -m "Auto-generate _config/links.md from _config/links.csv"
+          git add _config/links.md index.md
+          git diff --cached --quiet || git commit -m "Auto-generate _config/links.md and update index.md from _config/links.csv"
           git push
