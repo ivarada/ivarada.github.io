@@ -28,8 +28,8 @@ jobs:
 
       - name: Commit and push changes
         run: |
-          git config --local user.name "github-actions[bot]"
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "ivarada"
+          git config --local user.email "varada@"
           git add _config/links.md
           git diff --cached --quiet || git commit -m "Auto-generate _config/links.md from _config/links.csv"
           git push
