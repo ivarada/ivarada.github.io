@@ -10,7 +10,7 @@
 * [ 2026 by Quarter]( /calendar/calendar-q-2026.html)
 
 ### Glossary
-* [ Glossary - AI Integration - Essential Terms for Understanding Modern AI Implementation]( /_pages/glossary-ai-integration.html)
+* [ AI Integration - Essential Terms for Understanding Modern AI Implementation]( /_pages/glossary-ai-integration.html)
 * [ TLA - Three Letter Acronym List]( /html/tla.html)
 
 ### Sites
