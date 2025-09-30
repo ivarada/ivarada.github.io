@@ -5,8 +5,8 @@ title: Home
 
 # Home Page
 
----LINKS-INSERT-START---
----LINKS-INSERT-END---
+<!-- LINKS-INSERT-START -->
+<!-- LINKS-INSERT-END -->
 
 - [Glossary - AI Integration - Essential Terms for Understanding Modern AI Implementation](/_pages/glossary-ai-integration.html)
 - [Medium Stories](https://medium.com/@varada)
