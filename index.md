@@ -23,6 +23,7 @@ title: Home
 
 ### Sites
 * [ Other Websites]( /_pages/websites.html)
+
 <!-- LINKS-INSERT-END -->
 
 - [Glossary - AI Integration - Essential Terms for Understanding Modern AI Implementation](/_pages/glossary-ai-integration.html)
