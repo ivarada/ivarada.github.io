@@ -19,10 +19,10 @@ collections:
     output: true
   
 # Exclude these pages from the sitemap
-# exclude:
+exclude:
+  - "/_config/"
 #  - "/some_directory/"
 #  - "some_page.html"
-  - "/_config/"
 
 # If you want to use a custom sitemap, you can specify its path
 # sitemap: /custom_sitemap.xml
