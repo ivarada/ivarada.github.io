@@ -27,8 +27,8 @@ with open('_config/links.md', 'w', encoding='utf-8') as f:
     f.write(md_content)
 
 # Now update index.md between markers
-start_marker = '---LINKS-INSERT-START---'
-end_marker = '---LINKS-INSERT-END---'
+start_marker = '<!-- LINKS-INSERT-START -->'
+end_marker = '<!-- LINKS-INSERT-END -->'
 
 with open('index.md', 'r', encoding='utf-8') as f:
     index_content = f.read()
