@@ -1,9 +1,7 @@
-### Article
-* [ TK in Writing and Drafting - Complete Guide]( /_pages/tk.html)
-* [ The Five Stages of AI Integration - From Gold Rush to Autonomous Agents]( /_pages/ai-integration.html)
-
 ### Articles
 * [ Medium Stories]( https://medium.com/@varada)
+* [ TK in Writing and Drafting - Complete Guide]( /_pages/tk.html)
+* [ The Five Stages of AI Integration - From Gold Rush to Autonomous Agents]( /_pages/ai-integration.html)
 
 ### Calendar
 * [ 2025]( /calendar/calendar-y-2025.html)
