@@ -1,9 +1,9 @@
 ---
-title: 2025 by Quarter
+title: 2025 Template by quarter
 layout: default
 ---
 
-## 2025 Markdown Calendar Template (Quarter)
+## 2025 Template by quarter
 
 <pre><code>
 ## 2025
