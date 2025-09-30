@@ -3,7 +3,7 @@ title: 2025 Markdown Template
 layout: default
 ---
 
-## 2026 Markdown Calendar Template
+## 2025 Markdown Calendar Template
 
 <pre><code>
 ## 2025
