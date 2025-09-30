@@ -1,9 +1,9 @@
 ---
-title: 2026 by month
+title: 2026 Template by month
 layout: default
 ---
 
-## 2026 by month
+## 2026 Template by month
 
 <pre>
   <code>
