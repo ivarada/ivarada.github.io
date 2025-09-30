@@ -3,15 +3,13 @@ MD HTML File List
 ---MD---
 ./LICENSE.md
 ./README.md
+./_config/links.md
 ./_pages/about.md
 ./_pages/ai-integration.md
 ./_pages/glossary-ai-integration.md
 ./_pages/tk.md
 ./_pages/websites.md
-./calendar/calendar-q-2025.md
-./calendar/calendar-q-2026.md
 ./calendar/calendar-y-2025.md
-./calendar/calendar-y-2026.md
 ./html/tla.md
 ./index.md
 ./md/readme.md
