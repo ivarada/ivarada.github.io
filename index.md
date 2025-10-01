@@ -21,7 +21,4 @@ title: Home
 ### Sites
 * [ Other Websites]( /_pages/websites.html)
 
-
-
-
 <!-- LINKS-INSERT-END -->
