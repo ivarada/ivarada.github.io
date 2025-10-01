@@ -3,7 +3,7 @@ title: table-test
 layout: default
 ---
 
-|A|B|C|
+|AAAAAAAAA|BBBBBBBBB|CCCCCCCCC|
 |:---|---:|---:|
 |A|1|2|
 
