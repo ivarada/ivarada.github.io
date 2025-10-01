@@ -13,6 +13,7 @@ MD HTML File List
 ./html/tla.md
 ./index.md
 ./md/readme.md
+./md/table-test.md
 ./medium/pdf/index.md
 ---HTML---
 ./VisualMathEditor/VisualMathEditor.html
