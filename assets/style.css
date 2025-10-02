@@ -31,7 +31,7 @@ table.index-page-html th,
 table.index-page-html td {
   border-bottom: 2px dotted #333;
   padding: 10px;
-  background-color: #fff;
+  /* background-color: #fff; */
   position: relative;
 }
 
