@@ -21,6 +21,33 @@ nav a{
   border: 1px;
 }
 
+table.markdown-body {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table.markdown-body th,
+table.markdown-body td {
+  border-bottom: 1px dotted #333;
+  padding: 5px;
+  background-color: #fff;
+  position: relative;
+}
+
+/* Show something for empty cells, e.g. a subtle dash */
+table.markdown-body td:empty::after,
+table.markdown-body th:empty::after {
+  content: '–';
+  color: #ccc;
+  font-size: 1em;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+
 /* GitHub Markdown Table Styles */
 .markdown-body table {
   border-collapse: collapse;
