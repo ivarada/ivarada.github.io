@@ -54,6 +54,7 @@ MD HTML File List
 ./VisualMathEditor/information/tTHANKS.html
 ./VisualMathEditor/information/tVERSION.html
 ./_layouts/default.html
+./calendar-md/index.html
 ./calendar/index.html
 ./html/multiple-duration.html
 ./html/notes.html
