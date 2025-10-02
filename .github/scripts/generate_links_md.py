@@ -5,22 +5,24 @@ import re
 df = pd.read_csv('_config/links.csv')
 df.columns = df.columns.str.strip()
 
-required_cols = {'Category', 'Name', 'Link'}
+required_cols = {'Category', 'Name', 'Link', 'Year'}
 if not required_cols.issubset(df.columns):
     raise ValueError(f"CSV file must contain columns: {required_cols}. Found: {df.columns.tolist()}")
 
 # Sort by Category, then Name
 df = df.sort_values(['Category', 'Name'])
 
-# Group by Category
-output = []
-for category, group in df.groupby('Category'):
-    output.append(f"### {category}")
-    for _, row in group.iterrows():
-        output.append(f"* [{row['Name']}]({row['Link']})")
-    output.append("")  # Blank line for spacing
+# Table header (with GitHub markdown-body class)
+table_header = '{:class="markdown-body"}\n|Page|Category|Year|\n|:------------------------|------:|----:|'
 
-md_content = '\n'.join(output)
+table_rows = []
+for _, row in df.iterrows():
+    page = f"[ {row['Name']}]({row['Link']})"
+    category = row['Category']
+    year = row['Year']
+    table_rows.append(f"|{page}|{category}|{year}|")
+
+md_content = table_header + '\n' + '\n'.join(table_rows)
 
 # Write to Markdown file in _config/
 with open('_config/links.md', 'w', encoding='utf-8') as f:
@@ -33,7 +35,6 @@ end_marker = '<!-- LINKS-INSERT-END -->'
 with open('index.md', 'r', encoding='utf-8') as f:
     index_content = f.read()
 
-# Pattern matches anything between the markers, allowing for whitespace, blank lines, etc.
 pattern = re.compile(
     rf"({re.escape(start_marker)}\s*\n?)(.*?)(\n?\s*{re.escape(end_marker)})",
     re.DOTALL
