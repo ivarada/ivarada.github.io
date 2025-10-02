@@ -22,13 +22,13 @@ nav a{
 }
 
 /* TABLE FORMATTING FOR INDEX HOME PAGE */
-table.index-home-page {
+table.index-page-html {
   border-collapse: collapse;
   width: 100%;
 }
 
-table.index-home-page th,
-table.index-home-page td {
+table.index-page-html th,
+table.index-page-html td {
   border-bottom: 1px dotted #333;
   padding: 5px;
   background-color: #fff;
@@ -36,8 +36,8 @@ table.index-home-page td {
 }
 
 /* Show something for empty cells, e.g. a subtle dash */
-table.index-home-page td:empty::after,
-table.index-home-page th:empty::after {
+table.index-page-html td:empty::after,
+table.index-page-html th:empty::after {
   content: '–';
   color: #ccc;
   font-size: 1em;
