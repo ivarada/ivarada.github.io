@@ -29,7 +29,7 @@ table.index-page-html {
 
 table.index-page-html th,
 table.index-page-html td {
-  border-bottom: 2px dotted #333;
+  border-bottom: 1px dotted #333;
   padding: 10px;
   /* background-color: #fff; */
   position: relative;
