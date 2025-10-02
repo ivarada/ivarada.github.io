@@ -66,3 +66,24 @@ header nav .nav-btn:hover {
   background-color: #1742ad;
   box-shadow: 0 4px 12px rgba(37, 99, 235, 0.18);
 }
+
+header, footer {
+  background-color: #2563eb; /* Match button color */
+  color: #fff;
+  padding: 18px 0;
+  text-align: center;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+}
+
+header h1 {
+  margin: 0 0 10px 0;
+  font-size: 2em;
+  font-weight: 700;
+}
+
+footer p {
+  margin: 0;
+  font-size: 1em;
+  letter-spacing: 0.5px;
+}
