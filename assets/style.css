@@ -47,12 +47,12 @@ table.markdown-body th:empty::after {
   pointer-events: none;
 }
 
-/* General button/box style for navigation links */
+/* NAV BUTTONS: Strong blue */
 header nav .nav-btn {
   display: inline-block;
   padding: 8px 20px;
   margin: 0 6px;
-  background-color: #2563eb;
+  background-color: #2563eb; /* Deep blue */
   color: #fff !important;
   border-radius: 6px;
   border: none;
@@ -61,15 +61,15 @@ header nav .nav-btn {
   box-shadow: 0 2px 6px rgba(37, 99, 235, 0.12);
   transition: background 0.2s, box-shadow 0.2s;
 }
-
 header nav .nav-btn:hover {
-  background-color: #1742ad;
+  background-color: #1742ad; /* Darker blue on hover */
   box-shadow: 0 4px 12px rgba(37, 99, 235, 0.18);
 }
 
+/* LIGHTER BLUE FOR HEADER AND FOOTER */
 header, footer {
-  background-color: #2563eb; /* Match button color */
-  color: #fff;
+  background-color: #e3ebfd; /* Lighter shade of blue */
+  color: #1742ad;
   padding: 18px 0;
   text-align: center;
   font-family: 'Segoe UI', Arial, sans-serif;
