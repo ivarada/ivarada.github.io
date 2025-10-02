@@ -3,7 +3,7 @@ layout: default
 title: Home
 ---
 
-# Home Page
+## Home Page
 
 <!-- LINKS-INSERT-START -->
 
