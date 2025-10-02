@@ -7,7 +7,7 @@ title: Home
 
 <!-- LINKS-INSERT-START -->
 
-{:class="index-page-html"}
+{:class="markdown-body"}
 |Page|Category|Year|
 |:------------------------|------:|----:|
 |[ Medium Stories]( https://medium.com/@varada)|Article|2025|
