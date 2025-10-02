@@ -23,7 +23,7 @@ nav a{
 
 table.markdown-body {
   border-collapse: collapse;
-  width: 100%;
+  width: 80%;
 }
 
 table.markdown-body th,
@@ -47,31 +47,3 @@ table.markdown-body th:empty::after {
   pointer-events: none;
 }
 
-
-/* GitHub Markdown Table Styles */
-.markdown-body table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 100%;
-  margin-bottom: 16px;
-}
-
-.markdown-body th,
-.markdown-body td {
-  border: 1px solid #d0d7de;
-  padding: 6px 13px;
-}
-
-.markdown-body th {
-  background-color: #f6f8fa;
-  font-weight: 600;
-}
-
-.markdown-body tr {
-  background-color: #fff;
-  border-top: 1px solid #d0d7de;
-}
-
-.markdown-body tr:nth-child(2n) {
-  background-color: #f6f8fa;
-}
