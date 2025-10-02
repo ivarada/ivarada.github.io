@@ -21,7 +21,7 @@ title: Home
 ### Sites
 * [ Other Websites]( /_pages/websites.html)
 
-
+{:class="index-page-html"}
 |Page|Category|Year|
 |:------------------------|------:|----:|
 |[ Medium Stories]( https://medium.com/@varada)|Article|2025|
