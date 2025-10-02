@@ -1,5 +1,8 @@
+body, header, footer, nav, .nav-btn {
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
 body {
-  font-family: Arial, sans-serif;
+  /* font-family: Arial, sans-serif; */
   font-size: larger !important;
   margin: 2em;
   background: #fafafa;
