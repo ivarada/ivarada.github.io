@@ -23,7 +23,7 @@ nav a{
 
 table.markdown-body {
   border-collapse: collapse;
-  width: 80%;
+  /* width: 80%; */
 }
 
 table.markdown-body th,
