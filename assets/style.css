@@ -47,3 +47,22 @@ table.markdown-body th:empty::after {
   pointer-events: none;
 }
 
+/* General button/box style for navigation links */
+header nav .nav-btn {
+  display: inline-block;
+  padding: 8px 20px;
+  margin: 0 6px;
+  background-color: #2563eb;
+  color: #fff !important;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.12);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+header nav .nav-btn:hover {
+  background-color: #1742ad;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.18);
+}
