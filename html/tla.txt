@@ -1,4 +1,5 @@
 TLA, Description
+CoT,Chain of Thoughts
 ARC,American Red Cross
 AFL,"Acknowledge, Forgive, Learn"
 ANT,Automatic Negative Thoughts 
