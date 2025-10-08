@@ -1,5 +1,6 @@
 TLA, Description
 CoT,Chain of Thoughts
+GDP, Gross Donestic Product
 ARC,American Red Cross
 AFL,"Acknowledge, Forgive, Learn"
 ANT,Automatic Negative Thoughts 
