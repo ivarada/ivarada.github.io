@@ -14,7 +14,9 @@ layout: default
 | **Best For** | • Simple note-taking<br>• Task management<br>• Outlining ideas<br>• Quick capture<br>• Minimalists | • Academic research<br>• Complex knowledge mgmt<br>• Networked thinking<br>• Team collaboration<br>• Zettelkasten method | • Technical users<br>• Privacy-conscious users<br>• Long-form writing<br>• Full control seekers<br>• Anti-subscription users | • Users outgrowing Workflowy<br>• Need more features<br>• Want affordability<br>• Simple project management | • Open-source enthusiasts<br>• Students and researchers<br>• Journal/daily notes users<br>• Privacy-conscious<br>• Outliner fans wanting PKM |
 | **Pricing** | Free (250 bullets/mo) or $4.99/mo | $15/mo or $165/yr | Free (sync $4/mo optional) | Free (limited) or $7.99/mo or $95.88/yr | Completely free (open-source) |
 
----
+<br/>
+<br/>
+<br/>
 
 {:class="markdown-body"}
 | **Aspect** | **Tana** | **Remnote** | **Notion** | **Org-mode (Emacs)** |
