@@ -4,6 +4,20 @@ layout: default
 ---
 
 # Comprehensive Note-Taking Tools Comparison
+## Quick Decision Guide:
+
+- **Simplest**: Workflowy
+- **Best value**: Logseq (free) or Dynalist (cheap upgrade from Workflowy)
+- **Most powerful**: Tana or Org-mode (depending on technical skill)
+- **Best for students**: Remnote or Logseq
+- **Best for teams**: Notion or Roam Research
+- **Most private**: Obsidian, Logseq, or Org-mode
+- **Best for research**: Roam Research or Obsidian
+- **Easiest collaboration**: Notion
+
+<br/>
+<br/>
+<br/>
 
 {:class="markdown-body"}
 | **Aspect** | **Workflowy** | **Roam Research** | **Obsidian** | **Dynalist** | **Logseq** | 
@@ -27,15 +41,7 @@ layout: default
 | **Best For** | • Power users<br>• Complex workflows<br>• Custom databases<br>• Those wanting most flexibility<br>• CRM-like note systems | • Students<br>• Medical/law students<br>• Active learners<br>• Spaced repetition users<br>• Exam preparation | • Teams and collaboration<br>• Project management<br>• Wikis and documentation<br>• General productivity<br>• Non-technical users | • Programmers<br>• Emacs users<br>• Text purists<br>• Power users<br>• Those wanting total control<br>• Academic writing |
 | **Pricing** | Currently free (beta), pricing TBA | Free (limited) or $6/mo | Free (personal) or $10/mo (Plus) or $18/mo (Business) | Completely free (open-source) |
 
----
+<br/>
+<br/>
+<br/>
 
-## Quick Decision Guide:
-
-- **Simplest**: Workflowy
-- **Best value**: Logseq (free) or Dynalist (cheap upgrade from Workflowy)
-- **Most powerful**: Tana or Org-mode (depending on technical skill)
-- **Best for students**: Remnote or Logseq
-- **Best for teams**: Notion or Roam Research
-- **Most private**: Obsidian, Logseq, or Org-mode
-- **Best for research**: Roam Research or Obsidian
-- **Easiest collaboration**: Notion
