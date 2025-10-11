@@ -7,4 +7,5 @@
 |[  2025 Template]( /calendar/calendar-y-2025.html)|Calendar|2025|
 |[  AI Integration - Essential Terms for Understanding Modern AI Implementation]( /pages/glossary-ai-integration.html)|Glossary|2025|
 |[  TLA - Three Letter Acronym List]( /html/tla.html)|Glossary|2025|
+|[  Comprehensive Note-Taking Tools Comparison]( /pages/note-taking-tools.html)|Information|2025|
 |[  Other Websites]( /pages/websites.html)|Sites|2025|
