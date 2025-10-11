@@ -5,6 +5,7 @@ layout: default
 
 # Comprehensive Note-Taking Tools Comparison
 
+{:class="markdown-body"}
 | **Aspect** | **Workflowy** | **Roam Research** | **Obsidian** | **Dynalist** | **Logseq** |
 |------------|---------------|-------------------|--------------|--------------|------------|
 | **Core Features** | • Infinite nested bullets<br>• Zooming into bullets<br>• Tagging and mentions<br>• Search and filtering<br>• Simple sharing<br>• Cross-platform sync | • Bidirectional linking<br>• Daily notes<br>• Graph view<br>• Block references<br>• Backlinks<br>• Queries and filters<br>• Spaced repetition | • Local markdown files<br>• Bidirectional linking<br>• Graph view<br>• Extensive plugin system<br>• Custom CSS themes<br>• Canvas for visual boards<br>• Vim mode support | • Infinite nested bullets<br>• Zooming into bullets<br>• Checkboxes and dates<br>• File attachments<br>• Bookmarks<br>• Multiple documents<br>• More formatting than Workflowy | • Outliner-based<br>• Bidirectional linking<br>• Graph view<br>• Block references<br>• Daily notes/journal<br>• Queries<br>• Whiteboard<br>• Local markdown files |
@@ -15,6 +16,7 @@ layout: default
 
 ---
 
+{:class="markdown-body"}
 | **Aspect** | **Tana** | **Remnote** | **Notion** | **Org-mode (Emacs)** |
 |------------|----------|-------------|------------|----------------------|
 | **Core Features** | • Outliner with supertags<br>• Fields and schemas<br>• AI integration<br>• Commands and queries<br>• Graph view<br>• Daily nodes<br>• Live searches<br>• Calendar view | • Outliner-based<br>• Spaced repetition (flashcards)<br>• Bidirectional linking<br>• PDF annotation<br>• Daily notes<br>• Templates<br>• Knowledge graph | • Databases and tables<br>• Pages and subpages<br>• Templates<br>• Collaboration tools<br>• Integrations<br>• Wikis<br>• Kanban boards<br>• Web clipper | • Plain text outliner<br>• TODO management<br>• Agenda views<br>• Tags and properties<br>• Tables and spreadsheets<br>• Code execution<br>• Export to many formats<br>• Highly scriptable |
