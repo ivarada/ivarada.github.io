@@ -17,3 +17,5 @@ collections:
 # Exclude these pages from the sitemap
 exclude:
   - "/_config/"
+  - "/_layouts/"
+  - "/.github/"
