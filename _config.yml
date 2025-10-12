@@ -19,3 +19,5 @@ exclude:
   - "/_config/"
   - "/_layouts/"
   - "/.github/"
+  - "/md/"
+  - "/assets/"
