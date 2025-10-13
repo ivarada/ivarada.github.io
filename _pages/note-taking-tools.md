@@ -5,7 +5,6 @@ layout: default
 
 # Comprehensive Note-Taking Tools Comparison
 ## Quick Decision Guide:
-
 - **Simplest**: Workflowy
 - **Best value**: Logseq (free) or Dynalist (cheap upgrade from Workflowy)
 - **Most powerful**: Tana or Org-mode (depending on technical skill)
@@ -14,8 +13,10 @@ layout: default
 - **Most private**: Obsidian, Logseq, or Org-mode
 - **Best for research**: Roam Research or Obsidian
 - **Easiest collaboration**: Notion
+
 <br/>
 <br/>
+
 {:class="markdown-body"}
 
 | **Aspect**        | **Workflowy**                                                                                                                                                               | **Roam Research**                                                                                                                                                | **Obsidian**                                                                                                                                                                  | **Dynalist**                                                                                                                                                                   | **Logseq**                                                                                                                                                            | **Tana**                                                                                                                                                               | **Remnote**                                                                                                                                              | **Notion**                                                                                                                                                          | **Org-mode (Emacs)**                                                                                                                                                                      |
