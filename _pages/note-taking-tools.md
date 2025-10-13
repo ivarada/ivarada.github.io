@@ -28,7 +28,7 @@ layout: default
 
 <br/>
 
-Here are the official links for each of the products you listed:
+Here are the official links for each of the products listed:
 - **Workflowy**: [https://workflowy.com/](https://workflowy.com/)
 - **Roam Research**: [https://roamresearch.com/](https://roamresearch.com/)
 - **Obsidian**: [https://obsidian.md/](https://obsidian.md/)
