@@ -15,7 +15,6 @@ layout: default
 - **Easiest collaboration**: Notion
 
 <br/>
-<br/>
 
 {:class="markdown-body"}
 
@@ -28,4 +27,16 @@ layout: default
 | **Pricing**       | Free (250 bullets/mo) <br/>or $4.99/mo                                                                                                                                      | $15/mo <br/>or $165/yr                                                                                                                                           | Free (sync $4/mo<br/>optional)                                                                                                                                                    | Free (limited) <br/>or $7.99/mo <br/>or $95.88/yr                                                                                                                              | Completely free<br/>(open-source)                                                                                                                                         | Currently free (beta),<br/>pricing TBA                                                                                                                                     | Free (limited) <br/>or $6/mo                                                                                                                             | Free (personal) <br/>or $10/mo (Plus) <br/>or $18/mo (Business)                                                                                                     | Completely free<br/>(open-source)                                                                                                                                                             |
 
 <br/>
+
+Here are the official links for each of the products you listed:
+- **Workflowy**: [https://workflowy.com/](https://workflowy.com/)
+- **Roam Research**: [https://roamresearch.com/](https://roamresearch.com/)
+- **Obsidian**: [https://obsidian.md/](https://obsidian.md/)
+- **Dynalist**: [https://dynalist.io/](https://dynalist.io/)
+- **Logseq**: [https://logseq.com/](https://logseq.com/)
+- **Tana**: [https://tana.inc/](https://tana.inc/)
+- **Remnote**: [https://www.remnote.com/](https://www.remnote.com/)
+- **Notion**: [https://www.notion.so/](https://www.notion.so/)
+- **Org-mode (Emacs)**: [https://orgmode.org/](https://orgmode.org/)
+
 <br/>
