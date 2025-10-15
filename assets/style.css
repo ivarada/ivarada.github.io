@@ -62,7 +62,6 @@ header nav .nav-btn {
     color: #fff !important;
     border-radius: 6px;
     border: none;
-    /* font-weight: 600; */
     text-decoration: none;
     box-shadow: 0 2px 6px rgba(37, 99, 235, 0.12);
     transition:
@@ -77,7 +76,7 @@ header nav .nav-btn:hover {
 /* LIGHTER BLUE FOR HEADER AND FOOTER */
 header,
 footer {
-    background-color: #e3ebfd; /* Lighter shade of blue */
+    background-color: #e3e3e3; /* Lighter shade of blue */
     color: #1742ad;
     padding: 18px 0;
     text-align: center;
@@ -92,6 +91,5 @@ header h1 {
 
 footer p {
     margin: 0;
-    font-size: 1em;
     letter-spacing: 0.5px;
 }
