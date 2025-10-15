@@ -76,8 +76,7 @@ header nav .nav-btn:hover {
 /* LIGHTER BLUE FOR HEADER AND FOOTER */
 header,
 footer {
-    background-color: #e3e3e3; /* Lighter shade of blue */
-    color: #1742ad;
+    background-color: #e3e3e3;
     padding: 18px 0;
     text-align: center;
     box-shadow: 0 2px 8px rgba(37, 99, 235, 0.08);
