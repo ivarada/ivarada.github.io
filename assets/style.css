@@ -13,9 +13,10 @@ body {
 }
 header,
 footer {
-    background-color: #e3e3e3;
+    background-color: #e3e3e3; /* Lighter shade of blue */
     border-radius: 4px;
     box-shadow: 0 2px 8px rgba(37, 99, 235, 0.08);
+    color: #1742ad;
     padding: 18px 0;
     text-align: center;
 }
