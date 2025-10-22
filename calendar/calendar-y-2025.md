@@ -64,12 +64,12 @@ layout: default
 | 49 | **DEC** |    30 |     1 |     2 |     3 |     4 |     5 |     6 |
 | 50 |         |     7 |     8 |     9 |    10 |    11 |    12 |    13 |
 | 51 |         |    14 |    15 |    16 |    17 |    18 |    19 |    20 |
-| 52 |         |    21 |    22 |    23 |    24 |    25 |    26 |    27 |  
+| 52 |         |    21 |    22 |    23 |    24 |    25 |    26 |    27 |
 |    |         |    28 |    29 |    30 |    31 |       |       |       |
 |    |         | **S** | **M** | **T** | **W** | **T** | **F** | **S** |
-  
+
 </code></pre>
 
 Sources:
-- https://jorgesanz.net/posts/2024-11-13-markdown-calendar-for-2025/
-- https://ellanew.com/2024/11/13/markdown-calendars-2025
+- [https://jorgesanz.net/posts/2024-11-13-markdown-calendar-for-2025/](https://jorgesanz.net/posts/2024-11-13-markdown-calendar-for-2025/)
+- [https://ellanew.com/2024/11/13/markdown-calendars-2025](https://ellanew.com/2024/11/13/markdown-calendars-2025)

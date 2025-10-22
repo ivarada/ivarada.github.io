@@ -1,76 +1,98 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2024 Full Year Calendar</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <style>
-        .container{
-            border: 1px solid #000000;
-        }
-        .weekend {
-            background-color: #ffcccc; /* Light red background for weekends */
-        }
-        .special-day {
-            background-color: #ccff00; /* Light green background for special days */
-        }
-        .past-day{
-            background: rgb(0, 0, 0);
-            background: linear-gradient(310deg, rgba(100, 200, 100, 1) 0%, rgba(100, 200, 100, 0.20) 100%);
-        }
-        .daysIntoYear{
-            display: inline-block;
-            font-size: 80%;
-            float: right;
-        }
-        th {
-            text-align: center;
-            min-width: 120px; /* Minimum width for table cells */
-            background-color: #eeeeee;
-            /* Removed monospace font styling */
-        }
-        td{
-            text-align: left;
-            min-width: 120px; /* Minimum width for table cells */
-        }
-        .day-0 { background-color: #f8e0e0; } /* Sunday */
-        .day-1 { background-color: #f8e6e0; } /* Monday */
-        .day-2 { background-color: #f8ece0; } /* Tuesday */
-        .day-3 { background-color: #f8f2e0; } /* Wednesday */
-        .day-4 { background-color: #e6f8e0; } /* Thursday */
-        .day-5 { background-color: #e0f8e6; } /* Friday */
-        .day-6 { background-color: #e0f8f2; } /* Saturday */
-        .month-header {
-            /* Removed rotation */
-        }
-        caption {
-            caption-side: top;
-            font-size: larger;
-            font-weight: bold;
-            color: #333;
-            padding: 10px;
-        }
-        h2{
-          padding: 5px;
-          background-color: #e0f8f2;
-          /* width: 1440px; */
-        }
-    </style>
-</head>
-<body>
-    <div class="position-left">
-        <h2 class="text-center" id="title">2024 Full Year Calendar</h2>
-        <h3 class="text-center"><span id="today" class="badge text-bg-primary"></span></h3>
-        <table id="calendar" class="table table-bordered">
-        </table>
-    </div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Full Year Calendar</title>
+        <!-- Bootstrap CSS -->
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        />
+        <style>
+            .container {
+                border: 1px solid #000000;
+            }
+            .weekend {
+                background-color: #ffcccc; /* Light red background for weekends */
+            }
+            .special-day {
+                background-color: #ccff00; /* Light green background for special days */
+            }
+            .past-day {
+                background: rgb(0, 0, 0);
+                background: linear-gradient(
+                    310deg,
+                    rgba(100, 200, 100, 1) 0%,
+                    rgba(100, 200, 100, 0.2) 100%
+                );
+            }
+            .daysIntoYear {
+                display: inline-block;
+                font-size: 80%;
+                float: right;
+            }
+            th {
+                text-align: center;
+                min-width: 120px; /* Minimum width for table cells */
+                background-color: #eeeeee;
+                /* Removed monospace font styling */
+            }
+            td {
+                text-align: left;
+                min-width: 120px; /* Minimum width for table cells */
+            }
+            .day-0 {
+                background-color: #f8e0e0;
+            } /* Sunday */
+            .day-1 {
+                background-color: #f8e6e0;
+            } /* Monday */
+            .day-2 {
+                background-color: #f8ece0;
+            } /* Tuesday */
+            .day-3 {
+                background-color: #f8f2e0;
+            } /* Wednesday */
+            .day-4 {
+                background-color: #e6f8e0;
+            } /* Thursday */
+            .day-5 {
+                background-color: #e0f8e6;
+            } /* Friday */
+            .day-6 {
+                background-color: #e0f8f2;
+            } /* Saturday */
+            .month-header {
+                /* Removed rotation */
+            }
+            caption {
+                caption-side: top;
+                font-size: larger;
+                font-weight: bold;
+                color: #333;
+                padding: 10px;
+            }
+            h2 {
+                padding: 5px;
+                background-color: #e0f8f2;
+                /* width: 1440px; */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="position-left">
+            <h2 class="text-center" id="title">Full Year Calendar</h2>
+            <h3 class="text-center">
+                <span id="today" class="badge text-bg-primary"></span>
+            </h3>
+            <table id="calendar" class="table table-bordered"></table>
+        </div>
 
-    <!-- Bootstrap JS and its dependencies -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="calendar.js"></script>
-</body>
+        <!-- Bootstrap JS and its dependencies -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="calendar.js"></script>
+    </body>
 </html>

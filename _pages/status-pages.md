@@ -20,7 +20,7 @@ title: Status Pages
 | Downdetector – Verizon Outages          |  [https://downdetector.com/status/verizon/](https://downdetector.com/status/verizon/){:target="_blank"}|
 | Google Cloud Status              |  [https://status.cloud.google.com](https://status.cloud.google.com){:target="_blank"} |
 | IBM Cloud Status                 |  [https://cloud.ibm.com/docs/account?topic=account-viewing-cloud-status](https://cloud.ibm.com/docs/account?topic=account-viewing-cloud-status){:target="_blank"}|
-| Status.io (Hosted Status Pages)  |  [https://status.io](https://status.io){:target="_blank"}|
+| Status.io (Hosted Status Pages)  |  [https://status.status.io/](https://status.status.io/){:target="_blank"}|
 | T-Mobile Accessibility Service Updates  |  [https://www.tmobileaccess.com/resources/service-updates](https://www.tmobileaccess.com/resources/service-updates){:target="_blank"}|
 | T-Mobile IP Relay & Service Updates     |  [https://www.t-mobile.com/support/devices/device-troubleshooting/signal-issues--no-service-troubleshooting](https://www.t-mobile.com/support/devices/device-troubleshooting/signal-issues--no-service-troubleshooting){:target="_blank"}|
 | Uptime.com Cloud Status          |  [https://support.uptime.com/hc/en-us/articles/15762268661404-Monitoring-Cloud-Services-with-Uptime-Cloud-Status](https://support.uptime.com/hc/en-us/articles/15762268661404-Monitoring-Cloud-Services-with-Uptime-Cloud-Status){:target="_blank"}|
