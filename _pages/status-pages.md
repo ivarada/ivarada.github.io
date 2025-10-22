@@ -3,7 +3,7 @@ layout: default
 title: Status Pages
 ---
 
-## Status Pages
+# Status Pages
 
 **Publicly accessible status pages:**
 
