@@ -40,5 +40,3 @@ Here are the official links for each of the products listed:
 - **Org-mode (Emacs)**: [https://orgmode.org/](https://orgmode.org/)
 
 <br/>
-<br/>
-varada
