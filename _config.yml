@@ -13,9 +13,10 @@ plugins:
 collections:
   pages:
     output: true
-  
+
 # Exclude these pages from the sitemap
 exclude:
   - "/_config/"
   - "/.github/"
   - "/md/"
+  - "/VisualMathEditor/"
