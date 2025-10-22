@@ -7,6 +7,8 @@ title: Status Pages
 
 **Publicly accessible status pages:**
 
+{:class="markdown-body"}
+
 | Provider or Service or Platform                     |  Status Page URL                                                                                          |
 |:---------------------------------------|:-----------------------------------------------------------------------------------------------------------|
 | AT&T Service Outage Information         |  https://www.att.com/outages/                                                                            |
