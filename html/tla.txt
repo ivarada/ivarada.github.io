@@ -1,160 +1,161 @@
 TLA, Description
-CoT,Chain of Thoughts
-GDP, Gross Donestic Product
-ARC,American Red Cross
 AFL,"Acknowledge, Forgive, Learn"
-ANT,Automatic Negative Thoughts 
-API,Application Programming Interface 
-AR,Autoregressive 
-ARMA,Auto Regressive Moving Average 
-ATP,Annual Testing Plans 
-BCP,Business Continuity Plan 
-BIA,Business Impact Analysis 
-BIO,Business Interface Office 
-BPNT,Basic Psychological Needs Theory 
-BTO,Business Technology Office 
-BYOL,Bring your own logic 
-CAO,Chief Administration Office 
-CAT,Communication Accommodation Theory 
-CI,Configuration Item 
-CISO,Chief Information Security Officer 
-CISP,Continuous Service Improvement Programs 
-CMC,Computer Mediated Communication 
-CMDB,Configuration Management Database 
-CMD,Computer Mediated Deception 
-CMS,Content Management System 
-CMT,Crisis Management Team 
-CMT,Crisis Management Team 
-CODE,Capture Organize Distill Express 
-CRM,Customer Relationship Management 
-CRT,Consent Request Tracker 
-CW,Contingent Worker 
-DDoS,Distributed Denial of Service 
-DEX,Digital Employee Experience 
-DFM,Dynamic Factor Models 
-DFX,Design for X 
-DoS,Denial of Service 
-DPR,Divisional Performance Review 
-DRY,Don't Repeat Yourself 
-DSL,Definitive Software Library 
-EAF,Enterprise Automation Framework 
-EDFS,Enterprise Data Flow Services 
-EEF,Enterprise Environmental Factors 
-EFP,Empirical Fluctuation Process 
-EPIC,Enterprise Project Investment Committee 
-EPMO,Enterprise Project Management Office 
-ERM,Enterprise Risk Management 
-FDP,Freddie Data Platform 
+ANT,Automatic Negative Thoughts
+API,Application Programming Interface
+AR,Autoregressive
+ARC,American Red Cross
+ARMA,Auto Regressive Moving Average
+ATP,Annual Testing Plans
+BCP,Business Continuity Plan
+BIA,Business Impact Analysis
+BIO,Business Interface Office
+BPNT,Basic Psychological Needs Theory
+BTO,Business Technology Office
+BYOL,Bring your own logic
+CAO,Chief Administration Office
+CAT,Communication Accommodation Theory
+CI,Configuration Item
+CISO,Chief Information Security Officer
+CISP,Continuous Service Improvement Programs
+CMC,Computer Mediated Communication
+CMD,Computer Mediated Deception
+CMDB,Configuration Management Database
+CMS,Content Management System
+CMT,Crisis Management Team
+CMT,Crisis Management Team
+CODE,Capture Organize Distill Express
+CoT,Chain of Thoughts
+CRM,Customer Relationship Management
+CRT,Consent Request Tracker
+CW,Contingent Worker
+DDoS,Distributed Denial of Service
+DEX,Digital Employee Experience
+DFM,Dynamic Factor Models
+DFX,Design for X
+DoS,Denial of Service
+DPR,Divisional Performance Review
+DRY,Don't Repeat Yourself
+DSL,Definitive Software Library
+EAF,Enterprise Automation Framework
+EDFS,Enterprise Data Flow Services
+EEF,Enterprise Environmental Factors
+EFP,Empirical Fluctuation Process
+EPIC,Enterprise Project Investment Committee
+EPMO,Enterprise Project Management Office
+ERM,Enterprise Risk Management
+FDP,Freddie Data Platform
 FEAR,"Feel, Examine, Articulate, Reflect"
-FMI,Financial Market Infrastructure 
+FMI,Financial Market Infrastructure
 FoR,Frame of Reference
 FRA,Firm Resiliency Assessment
-GAAP,Generally Accepted Accounting Principles 
-GARCH,Generalized Autoregressive Conditional Heteroscedasticity 
-GMM,Generally Method of Moments 
-HA,High Availability 
-HQC,High Quality Connections 
-HRO,High Reliability Organization 
-IAT,Implicit Associate Test 
-ICE,Intercontinental Exchange's 
-ICE,Intercontinental Exchange's 
-ICMP,Internet Control Messaging Protocol 
-ICS,Industrial Control Systems 
-IDQ,Informatica Data Quality 
-IDR,Independent Design Review 
-IOR,Institute of Operational Risk 
-IRM,Institute of Risk Management
+GAAP,Generally Accepted Accounting Principles
+GARCH,Generalized Autoregressive Conditional Heteroscedasticity
+GDP, Gross Donestic Product
+GMM,Generally Method of Moments
+HA,High Availability
+HQC,High Quality Connections
+HRO,High Reliability Organization
+IAT,Implicit Associate Test
+ICE,Intercontinental Exchange's
+ICE,Intercontinental Exchange's
+ICMP,Internet Control Messaging Protocol
+ICS,Industrial Control Systems
+IDQ,Informatica Data Quality
+IDR,Independent Design Review
+IOR,Institute of Operational Risk
 IRE,Isolated Recovery Environment
-ITIL,Information Technology Infrastructure Library 
-IT,Information Technology 
-ITOM,IT Operations Management 
-ITSM,Information Technology Service Management 
-KAM,Knowledge Adoption Model 
-KPI,Key Performance Indicator 
-KRI,Key Risk Indicator 
-LDA,Latent Dirichlet Allocation 
-LOL,Laugh Out Loud 
-LSA,Latent Semantic Analysis 
-LSA,Latent Sematic Indexing 
-LSI,Latent Semantic Indexing 
-LSM,Latent Semantic Mapping 
-MACD,Moving Adding Changing Deleting 
-MA,Moving average 
-MDR,Metadata Repository 
-MOC,Map of Content 
-MRA,Matters Requiring Attention 
-MSA,Master Service Agreement 
-MVC,Minimal Viable Company 
-NAF,Needs Affordances Features 
-NFR,Non-Functional Requirements 
-NLP,Natural Language Processing 
-NPS,Net Promoter Score 
-NTR,New Technology Request 
-OCR,Optical Character Recognition 
-ODL,Operational Data Lake 
-ODP,Oversight Discovery Project 
-OKR,Objectives and Key Results 
-OKR,Organizational Knowledge Repositories 
-OLA,Operational Level Agreement 
-OPA,Organizational Process Assets 
-OPM,Organizational Project Management 
-ORM,Operational Risk Management 
-PARA,Project Areas Resources (References) Archive 
-PCM,Privacy Calculus Model 
-PHO,Primary Home Office 
-PIC,Project Investment Committee 
-PKM,Personal Knowledge Management 
-PM,Project Manager 
-PoD,Point of Differentiation 
-POS,Point of Sale 
-PPM,Project Portfolio Management 
-PST,Privacy-Sustainability Trading Model 
-PWA,Progressive Web Apps 
-QML,Quasi Maximum Likelihood 
-RACI,Responsible Accountable Consulted Informed 
-RAP,Remediation Action Plan 
-REST,Representational State Interface 
-RM,Resource Manager 
-RPO,Recovery Point Objective 
-RPV,Remediation Pending Validation 
-RTC,Recovery Time Capability 
-RTO,Recovery Time Objective 
-RTO,Return to Office 
-RVP,Remediation Pending Validation 
-SIEM,Security Incident and event management 
-SIG,Strategic Investment Group 
-SLA,Service Level Agreement 
+IRM,Institute of Risk Management
+IT,Information Technology
+ITIL,Information Technology Infrastructure Library
+ITOM,IT Operations Management
+ITSM,Information Technology Service Management
+KAM,Knowledge Adoption Model
+KPI,Key Performance Indicator
+KRI,Key Risk Indicator
+LDA,Latent Dirichlet Allocation
+LOL,Laugh Out Loud
+LSA,Latent Semantic Analysis
+LSA,Latent Sematic Indexing
+LSI,Latent Semantic Indexing
+LSM,Latent Semantic Mapping
+MA,Moving average
+MACD,Moving Adding Changing Deleting
+MDR,Metadata Repository
+MOC,Map of Content
+MRA,Matters Requiring Attention
+MSA,Master Service Agreement
+MVC,Minimal Viable Company
+NAF,Needs Affordances Features
+NFR,Non-Functional Requirements
+NLP,Natural Language Processing
+NPS,Net Promoter Score
+NTR,New Technology Request
+OCR,Optical Character Recognition
+ODL,Operational Data Lake
+ODP,Oversight Discovery Project
+OKR,Objectives and Key Results
+OKR,Organizational Knowledge Repositories
+OLA,Operational Level Agreement
+OPA,Organizational Process Assets
+OPM,Organizational Project Management
+ORM,Operational Risk Management
+PARA,Project Areas Resources (References) Archive
+PCM,Privacy Calculus Model
+PHO,Primary Home Office
+PIC,Project Investment Committee
+PKM,Personal Knowledge Management
+PM,Project Manager
+PoD,Point of Differentiation
+POS,Point of Sale
+PPM,Project Portfolio Management
+PST,Privacy-Sustainability Trading Model
+PWA,Progressive Web Apps
+QML,Quasi Maximum Likelihood
+RACI,Responsible Accountable Consulted Informed
+RAP,Remediation Action Plan
+REST,Representational State Interface
+RM,Resource Manager
+RPO,Recovery Point Objective
+RPV,Remediation Pending Validation
+RTC,Recovery Time Capability
+RTO, Retun to Office
+RTO,Recovery Time Objective
+RTO,Return to Office
+RVP,Remediation Pending Validation
+SIEM,Security Incident and event management
+SIG,Strategic Investment Group
+SLA,Service Level Agreement
 SMART,"Specific, Measurable, Attainable, Relevant, and Time-Bound"
-SME,Subject Matter Expert 
-SNMP,Simple Network Management Protocol 
-SNS,Social Networking Sites 
-SOAP,Simple Object Access Protocol 
-SOAR,"Security, Orchestration, Automation" 
+SME,Subject Matter Expert
+SNMP,Simple Network Management Protocol
+SNS,Social Networking Sites
+SOAP,Simple Object Access Protocol
 SOAR,"Security Orchestration, Automation, and Response"
-SOR,Source of Record 
-SOR,System of Record 
-SOT,Source of Truth 
-SPOF,Single Point of Failure 
-SPOT,Single Point of Truth 
-SRE,Site Recovery Engineering 
-SRM,Security Risk Management 
-SRM,Site Recovery Manager 
-SWAG,Simple Wild Ass Guess 
-TAM,Technology Adoption Model 
-TBD,To Be Determined 
-TBR,Theories of Bounded Rationality 
-TBR,To Be Read 
-TCO,Total Cost of Ownership 
-TILT,Transparency in Learning and Teaching (TILT Framework) 
-TLA,Three Letter Acronym 
-TLA,Three Letter Acronyms 
-TRR,Targeted Risk Review 
-UAT,User Acceptance Testing 
-UC,Underpinning Contracts 
-USP,Unique selling Point 
-VAR,Vector Autoregressive 
-WAIT,Why Am I Talking? 
-WPD,Work Performance Data 
-WPI,Work Performance Information 
-WPM,Workforce Password Management  
-WPR,Work Performance Report 
+SOAR,"Security, Orchestration, Automation"
+SOR,Source of Record
+SOR,System of Record
+SOT,Source of Truth
+SPOF,Single Point of Failure
+SPOT,Single Point of Truth
+SRE,Site Recovery Engineering
+SRM,Security Risk Management
+SRM,Site Recovery Manager
+SWAG,Simple Wild Ass Guess
+TAM,Technology Adoption Model
+TBD,To Be Determined
+TBR,Theories of Bounded Rationality
+TBR,To Be Read
+TCO,Total Cost of Ownership
+TILT,Transparency in Learning and Teaching (TILT Framework)
+TLA,Three Letter Acronym
+TLA,Three Letter Acronyms
+TRR,Targeted Risk Review
+UAT,User Acceptance Testing
+UC,Underpinning Contracts
+USP,Unique selling Point
+VAR,Vector Autoregressive
+WAIT,Why Am I Talking?
+WPD,Work Performance Data
+WPI,Work Performance Information
+WPM,Workforce Password Management
+WPR,Work Performance Report
