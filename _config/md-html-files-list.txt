@@ -8,6 +8,7 @@ MD HTML File List
 ./_pages/ai-integration.md
 ./_pages/glossary-ai-integration.md
 ./_pages/note-taking-tools.md
+./_pages/status-pages.md
 ./_pages/tk.md
 ./_pages/websites.md
 ./calendar/calendar-y-2025.md
