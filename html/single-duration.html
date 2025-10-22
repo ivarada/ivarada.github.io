@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Duration Calculator</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f7f6;
+        }
+        .calculator {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 350px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 0;
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 500;
+        }
+        input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+        .result-field {
+            margin-top: 20px;
+            background-color: #e9ecef;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 1.1em;
+            color: #0056b3;
+            font-weight: bold;
+            min-height: 24px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="calculator">
+        <h1>Date Duration Calculator 🗓️</h1>
+
+        <div class="input-group">
+            <label for="firstDate">First Date:</label>
+            <input type="date" id="firstDate">
+        </div>
+
+        <div class="input-group">
+            <label for="secondDate">Second Date:</label>
+            <input type="date" id="secondDate">
+        </div>
+
+        <div class="input-group">
+            <label>Calculated Duration:</label>
+            <div id="result" class="result-field"></div>
+        </div>
+    </div>
+
+    <script>
+        /**
+         * Calculates "Days Since" or "Days Left" between two dates.
+         * @param {string} firstDate - The first date string from the input.
+         * @param {string} secondDate - The second date string from the input.
+         * @returns {string} The formatted duration string.
+         */
+        function calculateDuration(firstDate, secondDate) {
+            const d1 = new Date(firstDate);
+            const d2 = new Date(secondDate);
+
+            // Check for invalid date inputs
+            if (isNaN(d1.getTime()) || isNaN(d2.getTime())) {
+                return "Please select two valid dates.";
+            }
+
+            let prefix, start, end;
+
+            // Determine which date is earlier to set the prefix and calculation order
+            if (d1 < d2) {
+                prefix = "Days Since: ";
+                start = d1;
+                end = d2;
+            } else {
+                prefix = "Days Left: ";
+                start = d2;
+                end = d1;
+            }
+
+            const diffMilliseconds = end - start;
+
+            // If dates are the same, handle this case separately
+            if (diffMilliseconds === 0) {
+                return "The dates are the same.";
+            }
+            
+            const totalDays = Math.floor(diffMilliseconds / (1000 * 60 * 60 * 24));
+
+            let durationString;
+            if (totalDays > 365) {
+                const years = Math.floor(totalDays / 365);
+                const remainingDays = totalDays % 365;
+                const months = Math.floor(remainingDays / 30);
+                const days = remainingDays % 30;
+                durationString = `${years} year(s) ${months} month(s) ${days} day(s)`;
+            } else if (totalDays > 30) {
+                const months = Math.floor(totalDays / 30);
+                const days = totalDays % 30;
+                durationString = `${months} month(s) ${days} day(s)`;
+            } else {
+                durationString = `${totalDays} day(s)`;
+            }
+
+            return prefix + durationString;
+        }
+
+        /**
+         * Gets values from the date inputs, calls the calculation, 
+         * and updates the result field in the HTML.
+         */
+        function updateResult() {
+            const firstDateValue = document.getElementById('firstDate').value;
+            const secondDateValue = document.getElementById('secondDate').value;
+            const resultDiv = document.getElementById('result');
+
+            if (firstDateValue && secondDateValue) {
+                resultDiv.textContent = calculateDuration(firstDateValue, secondDateValue);
+            } else {
+                resultDiv.textContent = ""; // Clear the result if a date is missing
+            }
+        }
+
+        // Add event listeners to both date inputs
+        document.getElementById('firstDate').addEventListener('input', updateResult);
+        document.getElementById('secondDate').addEventListener('input', updateResult);
+    </script>
+
+</body>
+</html>

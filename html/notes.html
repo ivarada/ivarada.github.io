@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Field Storage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        textarea {
+            width: 600px;
+            height: 300px;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 8px;
+            margin-right: 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #displayData {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            white-space: pre-wrap;
+        }
+
+        #messages {
+            margin-top: 10px;
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+
+    <label for="inputText">Enter Text:</label>
+    <textarea id="inputText" onkeypress="handleKeyPress(event)"></textarea>
+    <button onclick="saveToLocalStorage()">Save</button>
+    <button onclick="displayLocalStorage()">Display Data</button>
+    <button onclick="clearLocalStorage()">Clear Data</button>
+    <div id="displayData"></div>
+    <div id="messages"></div>
+
+    <script>
+        function saveToLocalStorage() {
+            const existingData = JSON.parse(localStorage.getItem('userInput')) || [];
+            const newInputValue = document.getElementById('inputText').value.trim();
+
+            if (newInputValue !== '') {
+                const dateTime = new Date().toLocaleString();
+                existingData.push({ text: newInputValue, dateTime });
+                localStorage.setItem('userInput', JSON.stringify(existingData));
+                updateMessages('Data saved to localStorage!', 'success');
+                displayLocalStorage();
+                document.getElementById('inputText').value = '';
+            } else {
+                updateMessages('Please enter some text before saving.', 'error');
+            }
+        }
+
+        function displayLocalStorage() {
+            const data = JSON.parse(localStorage.getItem('userInput')) || [];
+            const markdownContent = data.map(entry => `- **${entry.dateTime}**: ${entry.text}`).join('\n');
+            document.getElementById('displayData').textContent = markdownContent;
+            updateMessages('Data displayed from localStorage.', 'info');
+        }
+
+        function clearLocalStorage() {
+            localStorage.removeItem('userInput');
+            document.getElementById('displayData').textContent = '';
+            updateMessages('Local storage cleared!', 'success');
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault(); // Prevents adding a new line on Enter key
+                saveToLocalStorage();
+            }
+        }
+
+        function updateMessages(message, messageType) {
+            const messagesElement = document.getElementById('messages');
+            messagesElement.innerHTML = `<p class="${messageType}">${message}</p>`;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+body,
+header,
+footer,
+nav,
+.nav-btn {
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+body {
+    /* font-family: Arial, sans-serif; */
+    font-size: 1em;
+    margin: 0em 2em 1em 2em;
+    background: #fafafa;
+}
+header,
+footer {
+    background-color: #e3e3e3; /* Lighter shade of blue */
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.08);
+    color: #1742ad;
+    padding: 18px 0;
+    text-align: center;
+}
+
+main {
+    margin-top: 2em;
+}
+ul li {
+    padding: 10px;
+}
+nav a {
+    padding: 10px;
+    border: 1px;
+}
+
+table.markdown-body {
+    border-collapse: collapse;
+    /* width: 80%; */
+}
+
+table.markdown-body th,
+table.markdown-body td {
+    border-bottom: 1px dotted #333;
+    padding: 5px;
+    background-color: #fff;
+    position: relative;
+}
+
+/* Show something for empty cells, e.g. a subtle dash */
+table.markdown-body td:empty::after,
+table.markdown-body th:empty::after {
+    content: "–";
+    color: #ccc;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+/* NAV BUTTONS: Strong blue */
+header nav .nav-btn {
+    display: inline-block;
+    padding: 8px 20px;
+    margin: 0 6px;
+    background-color: #2563eb; /* Deep blue */
+    color: #fff !important;
+    border-radius: 6px;
+    border: none;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(37, 99, 235, 0.12);
+    transition:
+        background 0.2s,
+        box-shadow 0.2s;
+}
+header nav .nav-btn:hover {
+    background-color: #1742ad; /* Darker blue on hover */
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.18);
+}
+
+header h1 {
+    margin: 0 0 10px 0;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+footer p {
+    margin: 0;
+    letter-spacing: 0.5px;
+}

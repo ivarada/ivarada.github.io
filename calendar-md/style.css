@@ -1,0 +1,29 @@
+body {
+    font-family: system-ui, sans-serif;
+    margin: 2em;
+    background: #f8fafc;
+}
+h1 {
+    margin-bottom: 1em;
+}
+form {
+    margin-bottom: 1em;
+}
+label {
+    margin-right: 0.5em;
+}
+input,
+select,
+button {
+    margin-right: 1em;
+    padding: 0.25em 0.5em;
+}
+textarea {
+    width: 100%;
+    margin-bottom: 1em;
+    font-family: monospace;
+    font-size: 1em;
+}
+#copy-btn {
+    padding: 0.5em 1em;
+}

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Duration Calculator (Fixed)</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 2rem;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f7f6;
+        }
+        .calculator {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: auto;
+            max-width: 900px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        th {
+            background-color: #e9ecef;
+            color: #333;
+            font-weight: 600;
+            padding: 12px 8px;
+        }
+        input[type="date"] {
+            width: 100%;
+            min-width: 150px;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+        .result-cell {
+            font-weight: bold;
+            color: #0056b3;
+            min-width: 280px;
+            font-size: 0.9em;
+            text-align: left;
+            padding-left: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="calculator">
+        <h1>Date Duration Calculator 🗓️</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>First Date</th>
+                    <th>Second Date</th>
+                    <th>Calculated Duration</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+    </div>
+
+    <script>
+        /**
+         * NEW HELPER FUNCTION
+         * Parses a "YYYY-MM-DD" string and creates a Date object in the local timezone.
+         */
+        function parseLocalDate(dateString) {
+            const [year, month, day] = dateString.split('-').map(Number);
+            // The month is 0-indexed in JavaScript's Date constructor (0=Jan, 11=Dec)
+            return new Date(year, month - 1, day);
+        }
+
+        /**
+         * REVISED calculation function using the new helper.
+         */
+        function calculateDuration(firstDate, secondDate) {
+            // Use the new helper function to avoid timezone issues
+            const d1 = parseLocalDate(firstDate);
+            const d2 = parseLocalDate(secondDate);
+
+            if (isNaN(d1.getTime()) || isNaN(d2.getTime())) {
+                return "Please select two valid dates.";
+            }
+
+            let prefix, start, end;
+
+            if (d1 < d2) {
+                prefix = "Days Left";
+                start = d1;
+                end = d2;
+            } else {
+                prefix = "Days Since";
+                start = d2;
+                end = d1;
+            }
+
+            const diffMilliseconds = end - start;
+            if (diffMilliseconds === 0) {
+                return "The dates are the same.";
+            }
+            
+            // Recalculate totalDays based on the corrected dates
+            const totalDays = Math.floor(diffMilliseconds / (1000 * 60 * 60 * 24));
+            let durationString;
+
+            if (totalDays > 365) {
+                const years = Math.floor(totalDays / 365);
+                const remainingDays = totalDays % 365;
+                const months = Math.floor(remainingDays / 30);
+                const days = remainingDays % 30;
+                durationString = `${years} year(s) ${months} month(s) ${days} day(s)`;
+            } else if (totalDays > 30) {
+                const months = Math.floor(totalDays / 30);
+                const days = totalDays % 30;
+                durationString = `${months} month(s) ${days} day(s)`;
+            } else {
+                durationString = `${totalDays} day(s)`;
+            }
+
+            return `${prefix}: ${start.toDateString()} to ${end.toDateString()} — ${durationString}`;
+        }
+
+        /**
+         * This section dynamically builds the table rows. It remains unchanged.
+         */
+        document.addEventListener('DOMContentLoaded', () => {
+            const tableBody = document.getElementById('tableBody');
+            const numberOfRows = 10;
+
+            for (let i = 0; i < numberOfRows; i++) {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td><input type="date" class="first-date"></td>
+                    <td><input type="date" class="second-date"></td>
+                    <td class="result-cell"></td>
+                `;
+                tableBody.appendChild(row);
+
+                const firstDateInput = row.querySelector('.first-date');
+                const secondDateInput = row.querySelector('.second-date');
+                const resultCell = row.querySelector('.result-cell');
+
+                const updateRowResult = () => {
+                    const firstDateValue = firstDateInput.value;
+                    const secondDateValue = secondDateInput.value;
+
+                    if (firstDateValue && secondDateValue) {
+                        resultCell.textContent = calculateDuration(firstDateValue, secondDateValue);
+                    } else {
+                        resultCell.textContent = "";
+                    }
+                };
+                
+                firstDateInput.addEventListener('input', updateRowResult);
+                secondDateInput.addEventListener('input', updateRowResult);
+            }
+        });
+    </script>
+
+</body>
+</html>
