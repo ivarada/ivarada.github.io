@@ -14,6 +14,7 @@ title: Status Pages
 | AT&T Service Outage Information|  [https://www.att.com/outages/](https://www.att.com/outages/){:target="_blank"}|
 | AWS Health Dashboard             |  [https://health.aws.amazon.com/health/status](https://health.aws.amazon.com/health/status){:target="_blank"} |
 | Azure Status                     |  [https://status.azure.com/](https://status.azure.com/){:target="_blank"}|
+| Downdetector| [https://downdetector.com/](https://downdetector.com/){:target="_blank"}|
 | Downdetector – AT&T Outages             |  [https://downdetector.com/status/att/](https://downdetector.com/status/att/){:target="_blank"}|
 | Downdetector – T-Mobile Outages         |  [https://downdetector.com/status/t-mobile/](https://downdetector.com/status/t-mobile/){:target="_blank"}|
 | Downdetector – Verizon Outages          |  [https://downdetector.com/status/verizon/](https://downdetector.com/status/verizon/){:target="_blank"}|
