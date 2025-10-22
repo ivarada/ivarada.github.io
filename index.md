@@ -17,6 +17,7 @@ title: Home
 |[  AI Integration - Essential Terms for Understanding Modern AI Implementation]( /pages/glossary-ai-integration.html)|Glossary|2025|
 |[  TLA - Three Letter Acronym List]( /html/tla.html)|Glossary|2025|
 |[  Comprehensive Note-Taking Tools Comparison]( /pages/note-taking-tools.html)|Information|2025|
+|[  Service Status Pages]( /pages/status-pages.html)|Resilience|2025|
 |[  Other Websites]( /pages/websites.html)|Sites|2025|
 
 <!-- LINKS-INSERT-END -->
