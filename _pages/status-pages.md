@@ -12,7 +12,7 @@ title: Status Pages
 | Provider or Service or Platform|Status Page URL|
 |:---------------------------------------|:-----------------------------------------------------------------------------------------------------------|
 | AT&T Service Outage Information|  [https://www.att.com/outages/](https://www.att.com/outages/)|
-| AWS Health Dashboard             |  [https://health.aws.amazon.com/health/status/](https://health.aws.amazon.com/health/status/) |
+| AWS Health Dashboard             |  [https://health.aws.amazon.com/health/status](https://health.aws.amazon.com/health/status){:target="_blank"} |
 | Azure Status                     |  [https://status.azure.com/](https://status.azure.com/)|
 | Downdetector – AT&T Outages             |  [https://downdetector.com/status/att/](https://downdetector.com/status/att/)|
 | Downdetector – T-Mobile Outages         |  [https://downdetector.com/status/t-mobile/](https://downdetector.com/status/t-mobile/)|
