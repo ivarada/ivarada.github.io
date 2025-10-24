@@ -7,6 +7,7 @@ MD HTML File List
 ./_pages/about.md
 ./_pages/ai-integration.md
 ./_pages/glossary-ai-integration.md
+./_pages/google-maps-cities.md
 ./_pages/note-taking-tools.md
 ./_pages/status-pages.md
 ./_pages/tk.md
